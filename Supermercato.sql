@@ -185,3 +185,13 @@ SELECT 1
 FROM ordini o
 WHERE o.cod_fisc = u.cod_fisc
 );
+
+
+
+SELECT 
+    (SELECT MAX(eta) FROM utente) AS Eta_max,
+    (SELECT MIN(eta) FROM utente) AS Eta_minim
+FROM utente
+HAVING (SELECT MAX(età) FROM utente) > (SELECT MIN(età) FROM utente);
+
+
