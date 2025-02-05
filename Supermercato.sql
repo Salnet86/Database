@@ -186,7 +186,7 @@ FROM ordini o
 WHERE o.cod_fisc = u.cod_fisc
 );
 
-
+//sub query 
 
 SELECT 
     (SELECT MAX(eta) FROM utente) AS Eta_max,
@@ -194,4 +194,15 @@ SELECT
 FROM utente
 HAVING (SELECT MAX(età) FROM utente) > (SELECT MIN(età) FROM utente);
 
+
+
+-- Passo 1: Salva i valori in variabili
+SET @Eta_max = (SELECT MAX(eta) FROM utente);
+SET @Eta_minim = (SELECT MIN(eta) FROM utente);
+
+-- Passo 2: Usa le variabili per fare il confronto
+SELECT 
+    @Eta_max AS Eta_max,
+    @Eta_minim AS Eta_minim
+WHERE @Eta_max > @Eta_minim;
 
