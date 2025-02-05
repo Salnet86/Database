@@ -41,34 +41,12 @@ VALUES 
 ('Valentina', 'Ferrari', 33, 2600.00),
 ('Monica', 'Conti', 38, 2800.00),
 ('Anna', 'Ricci', 27, 2100.00),
--- (Ripeti con altri nomi femminili, età e stipendi, aggiungendo fino a 100 record)
 ('Giovanna', 'Pellegrini', 42, 2900.00),
 ('Paola', 'Gallo', 31, 2300.00),
 ('Irene', 'Martelli', 26, 2200.00),
 ('Marta', 'Barbieri', 34, 2700.00),
 ('Teresa', 'Giordano', 37, 2400.00),
 ('Caterina', 'Fontana', 28, 2600.00),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 SELECT MAX(stipendio) AS StipeMax
 FROM Dipendenti
