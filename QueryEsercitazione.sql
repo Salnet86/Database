@@ -1,4 +1,4 @@
-query amidate 
+--query amidate 
 SELECT 
     (SELECT SUM(prezzo) FROM spedizione) AS SommaSpedizione,
     (SELECT SUM(prezzo) FROM ordini) AS SommaOrdini
