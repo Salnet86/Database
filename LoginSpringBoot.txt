@@ -1,0 +1,187 @@
+Applicazione 
+│
+├── src
+│ ├── main
+│ │ ├── java
+│ │ │ └── com
+│ │ │ └── example
+│ │ │ └── formapp
+│ │ │ ├── controller
+│ │ │ │ └── FormController.java
+│ │ │ ├── model
+│ │ │ │ └── Person.java
+│ │ │ └── FormAppApplication.java
+│ │ └── resources
+│ │ ├── application.properties
+│ │ └── templates
+│ │ └── form.html
+└── pom.xml
+
+
+
+-----------Modello Persona --------
+
+
+package com.example.formapp.model;
+
+public class Person {
+private String nome;
+private String cognome;
+private int eta;
+private int annoNascita;
+
+// Getters and setters
+public String getNome() {
+return nome;
+}
+
+public void setNome(String nome) {
+this.nome = nome;
+}
+
+public String getCognome() {
+return cognome;
+}
+
+public void setCognome(String cognome) {
+this.cognome = cognome;
+}
+
+public int getEta() {
+return eta;
+}
+
+public void setEta(int eta) {
+this.eta = eta;
+}
+
+public int getAnnoNascita() {
+return annoNascita;
+}
+
+public void setAnnoNascita(int annoNascita) {
+this.annoNascita = annoNascita;
+}
+}
+
+
+
+-----------------------------
+Ora, creiamo un controller che gestisce la logica del form, in cui visualizziamo il form e gestiamo il salvataggio dei dati inseriti.
+
+
+FormController.java (controller)
+
+
+------------------------
+
+
+package com.example.formapp.controller;
+
+import com.example.formapp.model.Person;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+
+@Controller
+public class FormController {
+
+@GetMapping("/form")
+public String showForm(Model model) {
+model.addAttribute("person", new Person());
+return "form";
+}
+
+@PostMapping("/submitForm")
+public String submitForm(@ModelAttribute Person person, Model model) {
+model.addAttribute("person", person);
+return "result";
+}
+}
+
+---------------------Html-----
+
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form di Registrazione</title>
+</head>
+<body>
+<h2>Inserisci i tuoi dati</h2>
+<form action="/submitForm" method="post">
+<label for="nome">Nome:</label>
+<input type="text" id="nome" name="nome" th:value="${person.nome}" required><br><br>
+
+<label for="cognome">Cognome:</label>
+<input type="text" id="cognome" name="cognome" th:value="${person.cognome}" required><br><br>
+
+<label for="eta">Età:</label>
+<input type="number" id="eta" name="eta" th:value="${person.eta}" required><br><br>
+
+<label for="annoNascita">Anno di Nascita:</label>
+<input type="number" id="annoNascita" name="annoNascita" th:value="${person.annoNascita}" required><br><br>
+
+<button type="submit">Invia</button>
+</form>
+</body>
+</html>
+
+
+
+---------------------
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Risultato</title>
+</head>
+<body>
+<h2>Dettagli Inseriti</h2>
+<p><strong>Nome:</strong> <span th:text="${person.nome}"></span></p>
+<p><strong>Cognome:</strong> <span th:text="${person.cognome}"></span></p>
+<p><strong>Età:</strong> <span th:text="${person.eta}"></span></p>
+<p><strong>Anno di Nascita:</strong> <span th:text="${person.annoNascita}"></span></p>
+</body>
+</html>
+
+
+
+----------------
+.package com.example.formapp;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class FormAppApplication {
+
+public static void main(String[] args) {
+SpringApplication.run(FormAppApplication.class, args);
+}
+}
+
+
+
+
+
+server.port=8080
+mvn spring-boot:run
+
+
+http://localhost:8080/form
+---------------------
+
+
+
+
+
+
+
