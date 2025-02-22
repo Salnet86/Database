@@ -1,0 +1,86 @@
+1. Comando: Concedere privilegi
+
+GRANT SELECT, INSERT, SHOW DATABASES ON *.* TO 'Maria'@'localhost';
+
+Descrizione:
+Questo comando concede i privilegi SELECT, INSERT e SHOW DATABASES su tutti i database (*.*) per l'utente Maria che si connette dal localhost.
+
+Correzione:
+Il comando è corretto, ma puoi verificare i privilegi concessi con:
+SHOW GRANTS FOR 'Maria'@'localhost';
+
+---
+
+2. Comando: Revocare privilegi
+
+REVOKE INSERT ON studentessa FROM 'Maria'@'localhost';
+
+Errore:
+"Nessun privilegio definito per l'utente 'Maria' su 'studentessa'"
+
+Descrizione:
+Questo errore si verifica quando l'utente Maria non ha il privilegio INSERT sulla tabella studentessa.
+
+Correzione:
+Se il privilegio non è stato precedentemente concesso, prima concedilo e poi revoca. Esegui:
+GRANT INSERT ON studentessa TO 'Maria'@'localhost';
+REVOKE INSERT ON studentessa FROM 'Maria'@'localhost';
+
+---
+
+3. Comando: Selezionare un database prima di concedere privilegi
+
+GRANT INSERT ON studentessa TO 'Maria'@'localhost';
+
+Errore:
+"#1046 - Nessun database selezionato"
+
+Descrizione:
+Questo errore si verifica quando non è stato selezionato un database prima di eseguire il comando GRANT.
+
+Correzione:
+Prima di eseguire il comando GRANT, seleziona il database usando:
+USE nome_del_database;
+Ad esempio:
+USE scuola;
+Poi esegui il comando GRANT:
+GRANT INSERT ON studentessa TO 'Maria'@'localhost';
+
+---
+
+4. Comando: Concedere privilegi su una tabella specifica
+
+GRANT INSERT ON nome_del_database.studentessa TO 'Maria'@'localhost';
+
+Descrizione:
+Questo comando concede il privilegio INSERT sulla tabella studentessa nel database specificato (nome_del_database).
+
+Correzione:
+Il comando è corretto. Se desideri concedere privilegi su una tabella specifica, specifica sempre il database, come nel seguente esempio:
+GRANT INSERT ON scuola.studentessa TO 'Maria'@'localhost';
+
+---
+
+5. Comando: Rendi effettive le modifiche
+
+FLUSH PRIVILEGES;
+
+Descrizione:
+Questo comando è utile per applicare le modifiche ai privilegi dopo aver concesso o revocato privilegi.
+
+Correzione:
+Il comando è corretto. Sempre eseguirlo dopo aver modificato i privilegi:
+FLUSH PRIVILEGES;
+
+---
+
+Riepilogo degli errori principali:
+
+1. Errore: "Nessun database selezionato" (#1046):
+Causa: Non è stato selezionato un database prima di eseguire il comando GRANT.
+Soluzione: Esegui USE nome_del_database; prima di eseguire GRANT.
+
+2. Errore: "Nessun privilegio definito per l'utente 'Maria' su 'studentessa'":
+Causa: Il privilegio INSERT non è stato precedentemente concesso a Maria sulla tabella studentessa.
+Soluzione: Concedi prima il privilegio INSERT con GRANT INSERT ON studentessa TO 'Maria'@'localhost';, quindi esegui REVOKE.
+

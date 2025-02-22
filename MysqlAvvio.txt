@@ -1,0 +1,213 @@
+# Riepilogo completo dei comandi seguiti e delle operazioni eseguite
+
+1. **Verifica stato del servizio MySQL**
+Comando:
+sudo systemctl status mysql
+
+Descrizione:
+Il servizio MySQL non era attivo.
+
+---
+
+2. **Fermare il servizio MySQL**
+Comando:
+sudo systemctl stop mysql
+
+Descrizione:
+Tentativo di fermare MySQL, ma il servizio non si fermava correttamente, indicando problemi di avvio.
+
+---
+
+3. **Verifica dei processi attivi legati a MySQL**
+Comando:
+ps aux | grep mysqld
+
+Descrizione:
+Identificazione dei processi attivi associati a MySQL. Abbiamo visto che il processo mysqld non terminava.
+
+---
+
+4. **Uccidere i processi MySQL forzatamente**
+Comandi:
+sudo kill -9 19641
+sudo kill -9 2101
+
+Descrizione:
+I comandi `kill -9` sono stati usati per forzare la chiusura dei processi MySQL che non terminavano normalmente.
+
+---
+
+5. **Verifica dei log di errore di MySQL**
+Comando:
+sudo tail -f /var/log/mysql/error.log
+
+Descrizione:
+Monitoraggio in tempo reale del file di log di MySQL per identificare eventuali errori o crash.
+
+---
+
+6. **Controllo della directory di MySQL**
+Comando:
+sudo ls -ld /var/lib/mysql/
+
+Descrizione:
+Verifica dei permessi sulla directory di MySQL, al fine di escludere problemi di accesso.
+
+---
+
+7. **Modifica dei permessi nella directory di MySQL**
+Comando:
+sudo chown -R mysql:mysql /var/lib/mysql/
+
+Descrizione:
+Aggiornamento dei permessi per la directory di MySQL, garantendo che l'utente `mysql` abbia il controllo sui file.
+
+---
+
+8. **Rimozione del file di lock MySQL**
+Comando:
+sudo rm /var/lib/mysql/mysql.sock.lock
+
+Descrizione:
+Tentativo di rimuovere il file di lock che potrebbe impedire l'avvio del server MySQL.
+
+Risultato:
+Il file di lock non esisteva, quindi non è stato possibile rimuoverlo.
+
+---
+
+9. **Verifica della configurazione di MySQL**
+Comando:
+sudo nano /etc/mysql/my.cnf
+
+Descrizione:
+Modifica del file di configurazione di MySQL, in particolare aggiungendo la riga `innodb_force_recovery = 1` per forzare MySQL a partire in modalità di recupero.
+
+---
+
+10. **Controllo della directory di configurazione di MySQL**
+Comando:
+sudo ls -ld /etc/mysql/
+
+Descrizione:
+Verifica dei permessi e della presenza dei file di configurazione di MySQL.
+
+---
+
+11. **Riavvio del servizio MySQL**
+Comando:
+sudo systemctl restart mysql
+
+Descrizione:
+Tentativo di riavviare MySQL dopo aver modificato la configurazione.
+
+---
+
+12. **Verifica dello stato dopo il riavvio**
+Comando:
+sudo systemctl status mysql
+
+Descrizione:
+Dopo aver riavviato il servizio, questo comando ha confermato che MySQL era attivo e operativo.
+
+---
+
+13. **Verifica dei log di errore di MySQL dopo il riavvio**
+Comando:
+sudo tail -f /var/log/mysql/error.log
+
+Descrizione:
+Monitoraggio continuo dei log di errore per verificare la risoluzione di eventuali problemi o crash durante il riavvio.
+
+---
+
+14. **Controllo dei file di configurazione di MySQL**
+Comando:
+sudo nano /etc/mysql/my.cnf
+
+Descrizione:
+Ulteriori modifiche al file di configurazione, in particolare l'aggiunta di `innodb_force_recovery = 1` per forzare la modalità di recupero.
+
+---
+
+15. **Verifica della configurazione MySQL (nuovamente)**
+Comando:
+sudo cat /etc/mysql/my.cnf
+
+Descrizione:
+Ulteriore verifica del contenuto del file di configurazione per assicurarsi che tutto fosse stato configurato correttamente.
+
+---
+
+16. **Controllo della configurazione MySQL per SSL**
+Comando:
+sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+
+Descrizione:
+Modifica delle configurazioni SSL per escludere eventuali problemi legati ai certificati.
+
+---
+
+17. **Avvio di MySQL con configurazione di recovery**
+Comando:
+sudo systemctl start mysql
+
+Descrizione:
+Dopo le modifiche, abbiamo cercato di avviare il servizio MySQL in modalità recovery.
+
+---
+
+18. **Verifica dei permessi della cartella di configurazione**
+Comando:
+sudo ls -ld /etc/mysql/mysql.conf.d/
+
+Descrizione:
+Verifica dei permessi per garantire che i file di configurazione siano accessibili correttamente dal processo MySQL.
+
+---
+
+19. **Verifica della cartella di MySQL per confermare la presenza di file di configurazione**
+Comando:
+sudo ls -l /var/lib/mysql/
+
+Descrizione:
+Verifica che la cartella di MySQL contenga tutti i file necessari per il funzionamento del server.
+
+---
+
+20. **Riavvio finale del servizio MySQL**
+Comando:
+sudo systemctl restart mysql
+
+Descrizione:
+Riavvio finale del servizio per assicurarsi che tutte le modifiche fossero applicate correttamente e che MySQL fosse funzionante.
+
+---
+
+# Problemi e soluzioni adottate:
+
+1. **Problema iniziale con il servizio MySQL:**
+Il servizio MySQL non riusciva ad avviarsi correttamente e rimaneva in stato di "inactive" o "failed".
+
+2. **Processi di MySQL che non terminavano:**
+I processi di MySQL erano bloccati e non venivano terminati correttamente, causando il fallimento del riavvio del servizio. Questo è stato risolto con il comando `kill -9` per forzare la terminazione dei processi.
+
+3. **Errore relativo ai permessi di file:**
+I permessi dei file e delle directory di MySQL erano errati, impedendo l'avvio. Abbiamo corretto i permessi usando `chown -R mysql:mysql`.
+
+4. **File di lock non trovato:**
+Il file di lock (`mysql.sock.lock`) non era presente, quindi non è stato necessario rimuoverlo.
+
+5. **Modalità di recupero InnoDB:**
+È stato aggiunto `innodb_force_recovery = 1` nel file di configurazione per forzare MySQL ad avviarsi in modalità di recupero InnoDB. Questo ha permesso di aggirare eventuali problemi con i dati danneggiati.
+
+6. **Certificato SSL auto-firmato:**
+È stato evidenziato un avviso riguardante il certificato SSL auto-firmato, ma questo non ha impedito l'avvio del server.
+
+7. **Servizio riavviato con successo:**
+Dopo aver apportato tutte le modifiche, il servizio MySQL è stato riavviato con successo e il server è operativo senza errori nei log.
+
+---
+
+# Conclusioni:
+Dopo aver eseguito questi passaggi, MySQL è stato ripristinato correttamente e ora funziona come previsto. Tutti i comandi sono stati utilizzati per risolvere vari problemi, tra cui i permessi dei file, i processi bloccati e la configurazione di InnoDB.
