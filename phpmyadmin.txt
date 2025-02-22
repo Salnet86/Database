@@ -1,0 +1,75 @@
+sudo apt update
+sudo apt upgrade
+sudo apt install apache2
+sudo apt install mysql-server
+sudo apt install php php-mysqli php-zip php-gd php-mbstring php-xml php-curl
+
+sudo apt install phpmyadmin
+
+sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
+sudo systemctl restart apache2
+http://localhost/phpmyadmin
+
+sudo mysql -u root -p
+
+
+
+
+SELECT user, host, plugin FROM mysql.user WHERE user = 'root';
+
+
+
+sudo nano /etc/phpmyadmin/config-db.php
+$cfg['Servers'][$i]['user'] = 'root';
+$cfg['Servers'][$i]['password'] = ' '; // La tua password di root
+
+
+
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Daniel';
+exit;
+sudo systemctl restart apache2
+sudo systemctl restart mysql
+
+http://localhost/phpmyadmin
+
+
+Se non riesci ad accedere a MySQL con il comando mysql -u root -p, probabilmente MySQL sta utilizzando l'autenticazione tramite il plugin auth_socket, che non consente l'accesso tramite password per l'utente root.
+
+
+Puoi risolvere questo problema ripristinando l'accesso tramite password. Segui questi passaggi per reimpostare la configurazione di MySQL e consentire l'accesso con la password per l'utente root
+
+
+sudo mysql
+
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '';
+
+
+
+
+
+
+FLUSH PRIVILEGES;
+
+
+
+
+
+exit;
+
+
+
+
+
+
+sudo systemctl restart mysql
+
+
+
+
+
+
+
+mysql -u root -p
+
