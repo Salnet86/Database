@@ -1,0 +1,53 @@
+
+/etc/phpmyadmin/config.inc.php
+
+
+<?php
+/*
+ * phpMyAdmin configuration storage settings
+ */
+
+// Impostazioni di base per il server
+$i = 0;
+$cfg['Servers'][$i]['host'] = 'localhost'; // Indirizzo del server MySQL
+$cfg['Servers'][$i]['port'] = ''; // Porta (di default 3306)
+$cfg['Servers'][$i]['socket'] = ''; // Socket (se usato)
+$cfg['Servers'][$i]['user'] = 'root'; // Nome utente per il login
+$cfg['Servers'][$i]['password'] = ''; // Password per l'utente
+$cfg['Servers'][$i]['auth_type'] = 'cookie'; // Metodo di autenticazione (cookie, http, etc.)
+$cfg['Servers'][$i]['AllowNoPassword'] = false; // Permette l'accesso senza password
+$cfg['Servers'][$i]['extension'] = 'mysql'; // Estensione MySQL o mysqli
+
+// Sessioni
+$cfg['SessionSavePath'] = ''; // Percorso per salvare le sessioni
+
+// Controllo dell'autenticazione
+$cfg['LoginCookieValidity'] = 3600; // Durata della sessione di login in secondi
+$cfg['ForceSSL'] = false; // Forza l'uso di HTTPS
+
+// Tema di phpMyAdmin
+$cfg['ThemeDefault'] = 'pmahomme'; // Tema di default
+
+// Lingua di phpMyAdmin
+$cfg['DefaultLang'] = 'it'; // Lingua di default
+
+// Gestione dell'utente
+$cfg['Servers'][$i]['only_db'] = ''; // Lista di database cui l'utente ha accesso
+$cfg['Servers'][$i]['controluser'] = 'pma'; // Utente di controllo per phpMyAdmin
+$cfg['Servers'][$i]['controlpass'] = ''; // Password per l'utente di controllo
+
+// Nascondere alcuni database
+$cfg['Servers'][$i]['hide_db'] = 'information_schema|performance_schema'; // Nasconde i database specificati
+
+// Limite di tempo per l'esecuzione delle query
+$cfg['ExecTimeLimit'] = 300; // Limite di tempo in secondi per eseguire una query
+
+// Mostra tutte le tabelle nel database
+$cfg['ShowAll'] = false; // Mostra tutte le tabelle nel database
+
+// Protezione contro l'accesso non autorizzato
+$cfg['blowfish_secret'] = 'randomstring'; // Stringa segreta per l'autenticazione via cookie
+
+// Impostazioni del server di backup
+$cfg['Servers'][$i]['backup'] = true; // Imposta il server di backup
+?>
