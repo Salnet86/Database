@@ -1,0 +1,70 @@
+
+Relazione completa su risoluzione dei problemi con MySQL
+
+1. Introduzione:
+Durante l'installazione e la configurazione di MySQL, sono stati riscontrati diversi problemi, tra cui pacchetti con dipendenze non soddisfatte, problemi con il servizio MySQL che non partiva, e la necessità di reinstallare correttamente i pacchetti. Di seguito sono descritti tutti i passaggi effettuati, comprese le soluzioni trovate e gli errori riscontrati.
+
+2. Rimozione di MySQL:
+Sono stati eseguiti i seguenti comandi per rimuovere correttamente MySQL e i suoi pacchetti associati:
+
+    sudo apt-get remove --purge mysql*
+    sudo apt-get autoremove
+    sudo apt-get autoclean
+
+Questi comandi hanno rimosso i pacchetti relativi a MySQL e hanno liberato spazio eliminando pacchetti non più necessari. Tuttavia, alcuni pacchetti non sono stati rimossi completamente, come evidenziato dall'errore seguente:
+
+    E: Errore, pkgProblemResolver::Resolve ha generato delle interruzioni. Questo potrebbe essere causato da pacchetti bloccati.
+
+3. Errori relativi alle dipendenze:
+Un altro errore che si è verificato durante l'installazione di MySQL è stato legato alle dipendenze non soddisfatte:
+
+    mysql-client-8.0 : Dipende: mysql-client-core-8.0 ma non sta per essere installato
+    Dipende: mysql-common (>= 5.5) ma non sta per essere installato
+
+Per risolvere questo problema, sono stati eseguiti i seguenti comandi:
+
+    sudo apt-get install mysql-common mysql-server-8.0 mysql-client-8.0
+    sudo apt --fix-broken install
+
+Il comando "apt --fix-broken install" ha permesso di correggere le dipendenze, ma è stato necessario installare manualmente i pacchetti "mysql-common" e "mysql-client-core-8.0" per soddisfare le dipendenze richieste.
+
+4. Gestione del servizio MySQL:
+Durante il tentativo di avviare il servizio MySQL, si è riscontrato l'errore che MySQL non riusciva ad avviarsi correttamente, con il seguente messaggio:
+
+    mysql.service: Start request repeated too quickly.
+    mysql.service: Failed with result 'exit-code'.
+
+Dopo aver esaminato la configurazione e i permessi, è stato necessario applicare i seguenti comandi per correggere i permessi di accesso alle cartelle di MySQL:
+
+    sudo chmod -R 755 /etc/mysql /var/lib/mysql
+    sudo chown -R mysql:mysql /etc/mysql /var/lib/mysql
+
+Questo ha permesso di correggere i permessi e avviare correttamente il servizio MySQL.
+
+sudo mysql_secure_installation
+ 
+5. Rimozione del database di test:
+Successivamente, è stato chiesto se si voleva rimuovere il database di test, che non è necessario in ambiente di produzione. La rimozione è stata effettuata con successo rispondendo "y" alla seguente domanda:
+
+    Remove test database and access to it? (Press y|Y for Yes, any other key for No) : y
+
+6. Modifica della password di root:
+Infine, è stata eseguita la modifica della password di root di MySQL utilizzando il comando seguente:
+
+    ALTER USER 'root'@'localhost' IDENTIFIED BY 'newpassword';
+
+Questo ha permesso di cambiare la password di root, rendendo il sistema sicuro.
+
+7. Conclusione:
+Dopo aver seguito tutti questi passaggi, MySQL è stato correttamente installato, configurato e il servizio è stato avviato correttamente. La password di root è stata modificata con successo e il database di test è stato rimosso.
+
+Comandi utilizzati:
+
+    sudo apt-get remove --purge mysql*
+    sudo apt-get autoremove
+    sudo apt-get autoclean
+    sudo apt-get install mysql-common mysql-server-8.0 mysql-client-8.0
+    sudo apt --fix-broken install
+    sudo chmod -R 755 /etc/mysql /var/lib/mysql
+    sudo chown -R mysql:mysql /etc/mysql /var/lib/mysql
+    ALTER USER 'root'@'localhost' IDENTIFIED BY 'newpassword';
