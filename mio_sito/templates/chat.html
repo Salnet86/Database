@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Istantanea</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="chat-container">
+        <h2>Chat con Aziende</h2>
+        <div id="messages"></div>
+        <textarea id="message_input" placeholder="Scrivi un messaggio..."></textarea>
+        <button id="send_message">Invia</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.min.js"></script>
+    <script>
+        var socket = io.connect('http://' + document.domain + ':' + location.port);
+        
+        document.getElementById('send_message').onclick = function() {
+            var message = document.getElementById('message_input').value;
+            socket.send(message);
+            document.getElementById('message_input').value = '';
+        }
+
+        socket.on('message', function(msg) {
+            var messagesDiv = document.getElementById('messages');
+            messagesDiv.innerHTML += '<p>' + msg + '</p>';
+        });
+    </script>
+</body>
+</html>
