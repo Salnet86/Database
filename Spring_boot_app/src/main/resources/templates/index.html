@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserisci Utente</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 400px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin: 8px 0 4px;
+        }
+        input[type="text"], input[type="date"], input[type="email"] {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #333;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Inserisci Utente</h1>
+    <form action="/add" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required><br>
+
+        <label for="cognome">Cognome:</label>
+        <input type="text" id="cognome" name="cognome" required><br>
+
+        <label for="dataNascita">Data di Nascita:</label>
+        <input type="date" id="dataNascita" name="dataNascita" required><br>
+
+        <label for="citta">Città:</label>
+        <input type="text" id="citta" name="citta" required><br>
+
+        <label for="regione">Regione:</label>
+        <input type="text" id="regione" name="regione" required><br>
+
+        <label for="telefono">Telefono:</label>
+        <input type="text" id="telefono" name="telefono" required><br>
+
+        <!-- Aggiunta del campo email -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <input type="submit" value="Aggiungi">
+    </form>
+    <a href="/utenti">Vai alla lista degli utenti</a>
+</body>
+</html>
+

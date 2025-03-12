@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Utenti</title>
+   
+</head>
+<body>
+    <h1>Lista degli Utenti</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Cognome</th>
+            <th>Opzioni</th>
+        </tr>
+        <th:block th:each="utente : ${utenti}">
+            <tr>
+                <td th:text="${utente.id}"></td>
+                <td th:text="${utente.nome}"></td>
+                <td th:text="${utente.cognome}"></td>
+                <td th:text="${utente.dataNascita}"></td>
+                <td th:text="${utente.citta}"></td>
+                <td th:text="${utente.regione}"></td>
+                <td th:text="${utente.telefono}"></td>
+                <td th:text="${utente.email}"></td>
+                <td>
+                    <form action="/delete" method="post">
+                        <input type="radio" name="id" th:value="${utente.id}">
+                        <input type="submit" value="Elimina">
+                    </form>
+                </td>
+            </tr>
+        </th:block>
+    </table>
+</body>
+</html>
+
