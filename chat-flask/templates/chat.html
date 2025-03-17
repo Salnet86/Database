@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <style>
+        /* Reset dei margini e padding per tutti gli elementi */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Corpo della pagina */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Titolo della pagina */
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #4CAF50;
+        }
+
+        /* Modifica per il form di invio */
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            margin-bottom: 30px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        /* Bottone di invio */
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Messaggi */
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        #messages {
+            width: 100%;
+            max-width: 500px;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+            height: 300px;
+            margin-top: 20px;
+        }
+
+        /* Stile per i singoli messaggi */
+        #messages p {
+            padding: 5px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        #messages strong {
+            color: #4CAF50;
+        }
+
+        /* Media Queries per la responsività */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            form {
+                max-width: 100%;
+            }
+
+            button {
+                font-size: 1.1rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            form {
+                padding: 15px;
+            }
+
+            input, textarea, button {
+                font-size: 1rem;
+            }
+
+            #messages {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Chat Room</h1>
+    <form method="POST" action="{{ url_for('chat_room') }}">
+        <input type="text" name="username" placeholder="Inserisci il tuo nome" required>
+        <textarea name="message" placeholder="Scrivi un messaggio..." required></textarea>
+        <button type="submit">Invia</button>
+    </form>
+    
+    <h2>Messaggi:</h2>
+    <div id="messages">
+        {% for message in messages %}
+            <p><strong>{{ message[0] }}:</strong> {{ message[1] }}</p>
+        {% endfor %}
+    </div>
+</body>
+</html>

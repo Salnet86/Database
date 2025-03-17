@@ -1,0 +1,53 @@
+/* static/css/style.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+input, textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#messages {
+    margin-top: 20px;
+    max-height: 400px;
+    overflow-y: scroll;
+    border-top: 1px solid #ddd;
+}
+
+#messages p {
+    padding: 5px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+}
+
+#messages small {
+    font-size: 0.8em;
+    color: gray;
+}
