@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        form {
+            background-color: white;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin: 8px 0 4px;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Media Queries per dispositivi mobili */
+        @media screen and (max-width: 600px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            form {
+                padding: 15px;
+                margin: 10px;
+            }
+
+            input[type="submit"] {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Pagina login</h1>
+
+    <form action="{{url_for('registrazione')}}" method="post">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome"> <br>
+
+        <label for="cognome">Cognome</label>
+        <input type="text" id="cognome" name="cognome"> <br>
+
+        <label for="data">Data</label>
+        <input type="date" id="data" name="data"><br>
+
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email"> <br>
+
+        <label for="cod">Cod_Fisc</label>
+        <input type="text" id="cod" name="cod"> <br>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password"> <br>
+
+        <input type="submit" value="Invia">
+    </form>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+    </body>
+
+</html>
