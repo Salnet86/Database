@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Records</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        td input[type="radio"] {
+            margin: 0;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        /* Media queries for responsiveness */
+        @media (max-width: 768px) {
+            table {
+                font-size: 14px;
+            }
+            th, td {
+                padding: 6px;
+            }
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 20px;
+            }
+            table {
+                font-size: 12px;
+            }
+            th, td {
+                padding: 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Pannello</h1>
+    {% if data %}
+        <form action="{{ url_for('backeca') }}" method="POST" enctype="multipart/form-data">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome File</th>
+                        <th>File</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in data %}
+                        <tr>
+                            <td><input type="radio" name="id" value="{{ row[0] }}" required></td>
+                            <td>{{ row[1] }}</td>
+                            <td>
+                                {% if row[2] %}
+                                    <a href="data:application/pdf;base64,{{ row[2] }}" download="{{ row[1] }}">Scarica PDF</a>
+                                {% else %}
+                                    <p>No File</p>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <button type="submit">Elimina Record Selezionato</button>
+        </form>
+    {% else %}
+        <p style="text-align: center;">Nessun record trovato.</p>
+    {% endif %}
+</body>
+</html>
