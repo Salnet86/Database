@@ -1,0 +1,2932 @@
+[
+  {
+    "provincia": "Belluno",
+    "comune": "Alleghe",
+    "punto": 2500304,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Belluno",
+    "comune": "Arsiè",
+    "punto": 2500405,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Belluno",
+    "comune": "Auronzo di Cadore",
+    "punto": 2500509,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Belluno",
+    "comune": "Belluno",
+    "punto": 2500637,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Belluno",
+    "comune": "Borca di Cadore",
+    "punto": 2500701,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Belluno",
+    "comune": "Borgo Valbelluna",
+    "punto": 406,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Belluno",
+    "comune": "Borgo Valbelluna",
+    "punto": 408,
+    "tipo": "falda libera",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Belluno",
+    "comune": "Calalzo di Cadore",
+    "punto": 2500804,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Belluno",
+    "comune": "Canale d'Agordo",
+    "punto": 2502304,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Belluno",
+    "comune": "Chies d'Alpago",
+    "punto": 2501222,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Belluno",
+    "comune": "Colle Santa Lucia",
+    "punto": 2501401,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Belluno",
+    "comune": "Comelico Superiore",
+    "punto": 2501504,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Belluno",
+    "comune": "Comelico Superiore",
+    "punto": 2501507,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "solfati, fluoruri"
+  },
+  {
+    "provincia": "Belluno",
+    "comune": "Domegge di Cadore",
+    "punto": 2501804,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Belluno",
+    "comune": "Falcade",
+    "punto": 2501905,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Belluno",
+    "comune": "Feltre",
+    "punto": 2502101,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Belluno",
+    "comune": "Feltre",
+    "punto": 402,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Belluno",
+    "comune": "Feltre",
+    "punto": 403,
+    "tipo": "falda libera",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Belluno",
+    "comune": "Feltre",
+    "punto": 404,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Belluno",
+    "comune": "Feltre",
+    "punto": 405,
+    "tipo": "falda libera",
+    "profondita": 20,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Belluno",
+    "comune": "Fonzaso",
+    "punto": 2502201,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Belluno",
+    "comune": "Limana",
+    "punto": 2502905,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Belluno",
+    "comune": "Livinallongo del Col di Lana",
+    "punto": 2503002,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Belluno",
+    "comune": "Longarone",
+    "punto": 410,
+    "tipo": "falda libera",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Belluno",
+    "comune": "Perarolo di Cadore",
+    "punto": 2503702,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Belluno",
+    "comune": "Rivamonte Agordino",
+    "punto": 2504311,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Belluno",
+    "comune": "Rocca Pietore",
+    "punto": 2504406,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Belluno",
+    "comune": "San Pietro di Cadore",
+    "punto": 2504701,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Belluno",
+    "comune": "San Pietro di Cadore",
+    "punto": 2504709,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Belluno",
+    "comune": "Santa Giustina",
+    "punto": 407,
+    "tipo": "falda libera",
+    "profondita": 87,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Belluno",
+    "comune": "Setteville",
+    "punto": 2500210,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Belluno",
+    "comune": "Setteville",
+    "punto": 2504204,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Belluno",
+    "comune": "Setteville",
+    "punto": 2506406,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Belluno",
+    "comune": "Sovramonte",
+    "punto": 401,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Belluno",
+    "comune": "Val di Zoldo",
+    "punto": 2506812,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Padova",
+    "comune": "Campo San Martino",
+    "punto": 955,
+    "tipo": "falda semiconfinata",
+    "profondita": 60,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio"
+  },
+  {
+    "provincia": "Padova",
+    "comune": "Campodarsego",
+    "punto": 60,
+    "tipo": "falda confinata",
+    "profondita": 230,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio"
+  },
+  {
+    "provincia": "Padova",
+    "comune": "Campodoro",
+    "punto": 956,
+    "tipo": "falda semiconfinata",
+    "profondita": 13,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio, arsenico"
+  },
+  {
+    "provincia": "Padova",
+    "comune": "Carmignano di Brenta",
+    "punto": 954,
+    "tipo": "falda libera",
+    "profondita": 17,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Padova",
+    "comune": "Casale di Scodosia",
+    "punto": 980,
+    "tipo": "falda libera",
+    "profondita": 6,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio, arsenico"
+  },
+  {
+    "provincia": "Padova",
+    "comune": "Cervarese Santa Croce",
+    "punto": 975,
+    "tipo": "falda libera",
+    "profondita": 6,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Padova",
+    "comune": "Cinto Euganeo",
+    "punto": 2803111,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Padova",
+    "comune": "Cittadella",
+    "punto": 510,
+    "tipo": "falda libera",
+    "profondita": 27.17,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Padova",
+    "comune": "Cittadella",
+    "punto": 511,
+    "tipo": "falda libera",
+    "profondita": 60,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Padova",
+    "comune": "Codevigo",
+    "punto": 981,
+    "tipo": "falda libera",
+    "profondita": 6,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio, metolachlor esa"
+  },
+  {
+    "provincia": "Padova",
+    "comune": "Conselve",
+    "punto": 977,
+    "tipo": "falda libera",
+    "profondita": 6,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Padova",
+    "comune": "Fontaniva",
+    "punto": 952,
+    "tipo": "falda libera",
+    "profondita": 18,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Padova",
+    "comune": "Gazzo",
+    "punto": 55,
+    "tipo": "falda confinata",
+    "profondita": 230,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio"
+  },
+  {
+    "provincia": "Padova",
+    "comune": "Grantorto",
+    "punto": 959,
+    "tipo": "falda confinata",
+    "profondita": 50,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Padova",
+    "comune": "Limena",
+    "punto": 969,
+    "tipo": "falda semiconfinata",
+    "profondita": 20,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio, arsenico"
+  },
+  {
+    "provincia": "Padova",
+    "comune": "Maserà di Padova",
+    "punto": 976,
+    "tipo": "falda libera",
+    "profondita": 6,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio"
+  },
+  {
+    "provincia": "Padova",
+    "comune": "Monselice",
+    "punto": 978,
+    "tipo": "falda libera",
+    "profondita": 6,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Padova",
+    "comune": "Montagnana",
+    "punto": 979,
+    "tipo": "falda libera",
+    "profondita": 6,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "arsenico"
+  },
+  {
+    "provincia": "Padova",
+    "comune": "Padova",
+    "punto": 1036,
+    "tipo": "falda libera",
+    "profondita": 9,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Padova",
+    "comune": "Piacenza d'Adige",
+    "punto": 86,
+    "tipo": "falda libera",
+    "profondita": 5.6,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio, arsenico"
+  },
+  {
+    "provincia": "Padova",
+    "comune": "Piazzola sul Brenta",
+    "punto": 962,
+    "tipo": "falda semiconfinata",
+    "profondita": 16,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "pesticidi totali, metolachlor esa"
+  },
+  {
+    "provincia": "Padova",
+    "comune": "Piombino Dese",
+    "punto": 53,
+    "tipo": "falda confinata",
+    "profondita": 270,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Padova",
+    "comune": "San Giorgio delle Pertiche",
+    "punto": 963,
+    "tipo": "falda semiconfinata",
+    "profondita": 20,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio, arsenico"
+  },
+  {
+    "provincia": "Padova",
+    "comune": "San Giorgio in Bosco",
+    "punto": 951,
+    "tipo": "falda libera",
+    "profondita": 18,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Padova",
+    "comune": "San Martino di Lupari",
+    "punto": 517,
+    "tipo": "falda libera",
+    "profondita": 20,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Padova",
+    "comune": "San Pietro in Gu",
+    "punto": 965,
+    "tipo": "falda libera",
+    "profondita": 18,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Padova",
+    "comune": "Villa Estense",
+    "punto": 80,
+    "tipo": "falda libera",
+    "profondita": 5.16,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "cloruri, arsenico"
+  },
+  {
+    "provincia": "Rovigo",
+    "comune": "Badia Polesine",
+    "punto": 903,
+    "tipo": "falda libera",
+    "profondita": 4.5,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio, arsenico"
+  },
+  {
+    "provincia": "Rovigo",
+    "comune": "Badia Polesine",
+    "punto": 904,
+    "tipo": "falda confinata",
+    "profondita": 18.5,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio, arsenico"
+  },
+  {
+    "provincia": "Rovigo",
+    "comune": "Bagnolo di Po",
+    "punto": 905,
+    "tipo": "falda libera",
+    "profondita": 11,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio, arsenico"
+  },
+  {
+    "provincia": "Rovigo",
+    "comune": "Bagnolo di Po",
+    "punto": 906,
+    "tipo": "falda confinata",
+    "profondita": 16.5,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio, arsenico"
+  },
+  {
+    "provincia": "Rovigo",
+    "comune": "Bergantino",
+    "punto": 901,
+    "tipo": "falda confinata",
+    "profondita": 50,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio, arsenico"
+  },
+  {
+    "provincia": "Rovigo",
+    "comune": "Bergantino",
+    "punto": 907,
+    "tipo": "falda libera",
+    "profondita": 10.5,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio, arsenico"
+  },
+  {
+    "provincia": "Rovigo",
+    "comune": "Bergantino",
+    "punto": 908,
+    "tipo": "falda confinata",
+    "profondita": 16.5,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio, arsenico"
+  },
+  {
+    "provincia": "Rovigo",
+    "comune": "Canda",
+    "punto": 909,
+    "tipo": "falda libera",
+    "profondita": 8,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio"
+  },
+  {
+    "provincia": "Rovigo",
+    "comune": "Canda",
+    "punto": 910,
+    "tipo": "falda confinata",
+    "profondita": 20,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio"
+  },
+  {
+    "provincia": "Rovigo",
+    "comune": "Castelnovo Bariano",
+    "punto": 911,
+    "tipo": "falda libera",
+    "profondita": 9,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio, solfati"
+  },
+  {
+    "provincia": "Rovigo",
+    "comune": "Castelnovo Bariano",
+    "punto": 912,
+    "tipo": "falda confinata",
+    "profondita": 15,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio, arsenico"
+  },
+  {
+    "provincia": "Rovigo",
+    "comune": "Fiesso Umbertiano",
+    "punto": 913,
+    "tipo": "falda libera",
+    "profondita": 5,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Rovigo",
+    "comune": "Fiesso Umbertiano",
+    "punto": 914,
+    "tipo": "falda confinata",
+    "profondita": 19,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "conduttività (a 20 °C), ione ammonio, cloruri"
+  },
+  {
+    "provincia": "Rovigo",
+    "comune": "Giacciano con Baruchella",
+    "punto": 915,
+    "tipo": "falda libera",
+    "profondita": 7,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Rovigo",
+    "comune": "Giacciano con Baruchella",
+    "punto": 916,
+    "tipo": "falda confinata",
+    "profondita": 15,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Rovigo",
+    "comune": "Lendinara",
+    "punto": 926,
+    "tipo": "falda libera",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio"
+  },
+  {
+    "provincia": "Rovigo",
+    "comune": "Polesella",
+    "punto": 900,
+    "tipo": "falda confinata",
+    "profondita": 50,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio"
+  },
+  {
+    "provincia": "Rovigo",
+    "comune": "Trecenta",
+    "punto": 917,
+    "tipo": "falda libera",
+    "profondita": 6,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Rovigo",
+    "comune": "Trecenta",
+    "punto": 918,
+    "tipo": "falda confinata",
+    "profondita": 14,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Rovigo",
+    "comune": "Villamarzana",
+    "punto": 921,
+    "tipo": "falda libera",
+    "profondita": 6.3,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio"
+  },
+  {
+    "provincia": "Rovigo",
+    "comune": "Villamarzana",
+    "punto": 922,
+    "tipo": "falda confinata",
+    "profondita": 19,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio, arsenico"
+  },
+  {
+    "provincia": "Rovigo",
+    "comune": "Villanova del Ghebbo",
+    "punto": 919,
+    "tipo": "falda libera",
+    "profondita": 12,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio, arsenico"
+  },
+  {
+    "provincia": "Rovigo",
+    "comune": "Villanova del Ghebbo",
+    "punto": 920,
+    "tipo": "falda confinata",
+    "profondita": 17,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio, arsenico"
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Altivole",
+    "punto": 23,
+    "tipo": "falda libera",
+    "profondita": 85.97,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Altivole",
+    "punto": 531,
+    "tipo": "falda libera",
+    "profondita": 49.15,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Arcade",
+    "punto": 773,
+    "tipo": "falda libera",
+    "profondita": 40,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Asolo",
+    "punto": 535,
+    "tipo": "falda libera",
+    "profondita": 40,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Breda di Piave",
+    "punto": 816,
+    "tipo": "falda libera",
+    "profondita": 25,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Caerano di San Marco",
+    "punto": 108,
+    "tipo": "falda libera",
+    "profondita": 98.3,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Cappella Maggiore",
+    "punto": 806,
+    "tipo": "falda libera",
+    "profondita": 16.4,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Casale sul Sile",
+    "punto": 117,
+    "tipo": "falda libera",
+    "profondita": 7.6,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "metolachlor esa"
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Castelcucco",
+    "punto": 2601102,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Castelfranco Veneto",
+    "punto": 572,
+    "tipo": "falda libera",
+    "profondita": 17,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Castelfranco Veneto",
+    "punto": 586,
+    "tipo": "falda libera",
+    "profondita": 30,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Castelfranco Veneto",
+    "punto": 765,
+    "tipo": "falda libera",
+    "profondita": 30,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "nitrati"
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Cessalto",
+    "punto": 114,
+    "tipo": "falda libera",
+    "profondita": 7.2,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "metolachlor esa"
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Cessalto",
+    "punto": 94,
+    "tipo": "falda confinata",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio, arsenico"
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Codognè",
+    "punto": 789,
+    "tipo": "falda libera",
+    "profondita": 7,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "pesticidi totali, ione ammonio, metolachlor esa"
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Cordignano",
+    "punto": 702,
+    "tipo": "falda libera",
+    "profondita": 15,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Cornuda",
+    "punto": 100,
+    "tipo": "falda libera",
+    "profondita": 55.5,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Farra di Soligo",
+    "punto": 758,
+    "tipo": "falda libera",
+    "profondita": 13,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Follina",
+    "punto": 2602713,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Follina",
+    "punto": 90,
+    "tipo": "falda libera",
+    "profondita": 22,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Fontanelle",
+    "punto": 724,
+    "tipo": "falda libera",
+    "profondita": 5,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "metolachlor esa"
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Fregona",
+    "punto": 2603003,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Gaiarine",
+    "punto": 711,
+    "tipo": "falda libera",
+    "profondita": 8,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio"
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Gaiarine",
+    "punto": 726,
+    "tipo": "falda libera",
+    "profondita": 4,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Giavera del Montello",
+    "punto": 761,
+    "tipo": "falda libera",
+    "profondita": 44,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Giavera del Montello",
+    "punto": 810,
+    "tipo": "falda libera",
+    "profondita": 120,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Loria",
+    "punto": 550,
+    "tipo": "falda libera",
+    "profondita": 81,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Loria",
+    "punto": 769,
+    "tipo": "falda libera",
+    "profondita": 40,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Loria",
+    "punto": 771,
+    "tipo": "falda libera",
+    "profondita": 38,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "pesticidi totali, nitrati, metolachlor, metolachlor esa"
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Mareno di Piave",
+    "punto": 790,
+    "tipo": "falda libera",
+    "profondita": 25,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Mareno di Piave",
+    "punto": 791,
+    "tipo": "falda libera",
+    "profondita": 26,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Mareno di Piave",
+    "punto": 803,
+    "tipo": "falda libera",
+    "profondita": 13,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Maser",
+    "punto": 248,
+    "tipo": "falda libera",
+    "profondita": 77,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "atrazina-desetil-desisopropil (DACT)"
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Maserada sul Piave",
+    "punto": 781,
+    "tipo": "falda libera",
+    "profondita": 8,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Montebelluna",
+    "punto": 570,
+    "tipo": "falda libera",
+    "profondita": 59,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Montebelluna",
+    "punto": 730,
+    "tipo": "falda libera",
+    "profondita": 90,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Morgano",
+    "punto": 808,
+    "tipo": "falda libera",
+    "profondita": 18,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Moriago della Battaglia",
+    "punto": 746,
+    "tipo": "falda libera",
+    "profondita": 35,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Moriago della Battaglia",
+    "punto": 814,
+    "tipo": "falda libera",
+    "profondita": 5.62,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Nervesa della Battaglia",
+    "punto": 101,
+    "tipo": "falda libera",
+    "profondita": 22.6,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Nervesa della Battaglia",
+    "punto": 2605009,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Nervesa della Battaglia",
+    "punto": 741,
+    "tipo": "falda libera",
+    "profondita": 45,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Oderzo",
+    "punto": 92,
+    "tipo": "falda confinata",
+    "profondita": 218,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio"
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Ormelle",
+    "punto": 812,
+    "tipo": "falda libera",
+    "profondita": 6.5,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Ormelle",
+    "punto": 91,
+    "tipo": "falda confinata",
+    "profondita": 109,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Paese",
+    "punto": 766,
+    "tipo": "falda libera",
+    "profondita": 35,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "pesticidi totali, metolachlor esa"
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Pederobba",
+    "punto": 2605601,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Ponte di Piave",
+    "punto": 807,
+    "tipo": "falda libera",
+    "profondita": 8,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Ponzano Veneto",
+    "punto": 762,
+    "tipo": "falda libera",
+    "profondita": 21,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Ponzano Veneto",
+    "punto": 819,
+    "tipo": "falda libera",
+    "profondita": 50,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Quinto di Treviso",
+    "punto": 99,
+    "tipo": "falda libera",
+    "profondita": 6,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Resana",
+    "punto": 571,
+    "tipo": "falda libera",
+    "profondita": 14,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "metolachlor esa"
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Resana",
+    "punto": 578,
+    "tipo": "falda libera",
+    "profondita": 25,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Resana",
+    "punto": 777,
+    "tipo": "falda libera",
+    "profondita": 27,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Riese Pio X",
+    "punto": 230,
+    "tipo": "falda libera",
+    "profondita": 150,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Riese Pio X",
+    "punto": 573,
+    "tipo": "falda libera",
+    "profondita": 13,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "metolachlor esa"
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Riese Pio X",
+    "punto": 772,
+    "tipo": "falda libera",
+    "profondita": 39,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "San Biagio di Callalta",
+    "punto": 809,
+    "tipo": "falda libera",
+    "profondita": 6.21,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "pesticidi totali, metalaxil e metalaxil-M, metolachlor esa, dimetomorf"
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "San Pietro di Feletto",
+    "punto": 2607301,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "San Pietro di Feletto",
+    "punto": 792,
+    "tipo": "falda libera",
+    "profondita": 14,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "San Polo di Piave",
+    "punto": 811,
+    "tipo": "falda libera",
+    "profondita": 8,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "San Vendemiano",
+    "punto": 710,
+    "tipo": "falda libera",
+    "profondita": 15,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "San Zenone degli Ezzelini",
+    "punto": 236,
+    "tipo": "falda libera",
+    "profondita": 56.5,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Santa Lucia di Piave",
+    "punto": 713,
+    "tipo": "falda libera",
+    "profondita": 29.4,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Santa Lucia di Piave",
+    "punto": 714,
+    "tipo": "falda libera",
+    "profondita": 42.5,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Sernaglia della Battaglia",
+    "punto": 754,
+    "tipo": "falda libera",
+    "profondita": 30,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Sernaglia della Battaglia",
+    "punto": 756,
+    "tipo": "falda libera",
+    "profondita": 8.6,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Spresiano",
+    "punto": 786,
+    "tipo": "falda libera",
+    "profondita": 25,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Trevignano",
+    "punto": 738,
+    "tipo": "falda libera",
+    "profondita": 46,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Trevignano",
+    "punto": 739,
+    "tipo": "falda libera",
+    "profondita": 50,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Trevignano",
+    "punto": 820,
+    "tipo": "falda libera",
+    "profondita": 60,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Treviso",
+    "punto": 88,
+    "tipo": "falda confinata",
+    "profondita": 140,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Vazzola",
+    "punto": 817,
+    "tipo": "falda confinata",
+    "profondita": 120,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio"
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Vedelago",
+    "punto": 271,
+    "tipo": "falda libera",
+    "profondita": 64,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Vedelago",
+    "punto": 583,
+    "tipo": "falda libera",
+    "profondita": 30,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "nitrati"
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Vedelago",
+    "punto": 742,
+    "tipo": "falda libera",
+    "profondita": 37,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "nitrati"
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Vedelago",
+    "punto": 815,
+    "tipo": "falda libera",
+    "profondita": 24.08,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Villorba",
+    "punto": 750,
+    "tipo": "falda libera",
+    "profondita": 20,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Villorba",
+    "punto": 818,
+    "tipo": "falda libera",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Vittorio Veneto",
+    "punto": 102,
+    "tipo": "falda libera",
+    "profondita": 14.67,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "nitrati"
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Vittorio Veneto",
+    "punto": 2609210,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Volpago del Montello",
+    "punto": 732,
+    "tipo": "falda libera",
+    "profondita": 103,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Volpago del Montello",
+    "punto": 735,
+    "tipo": "falda libera",
+    "profondita": 85,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "nitrati"
+  },
+  {
+    "provincia": "Treviso",
+    "comune": "Zero Branco",
+    "punto": 363,
+    "tipo": "falda confinata",
+    "profondita": 52,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "metolachlor esa"
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "Campolongo Maggiore",
+    "punto": 16,
+    "tipo": "falda confinata",
+    "profondita": 280,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio"
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "Camponogara",
+    "punto": 368,
+    "tipo": "falda confinata",
+    "profondita": 170,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio, arsenico"
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "Caorle",
+    "punto": 309,
+    "tipo": "falda confinata",
+    "profondita": 150,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio"
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "Cavallino-Treporti",
+    "punto": 365,
+    "tipo": "falda confinata",
+    "profondita": 307,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio, cloruri"
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "Cavallino-Treporti",
+    "punto": 366,
+    "tipo": "falda confinata",
+    "profondita": 120,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio, arsenico"
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "Cavarzere",
+    "punto": 1006,
+    "tipo": "falda libera",
+    "profondita": 6,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio, arsenico"
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "Ceggia",
+    "punto": 320,
+    "tipo": "falda confinata",
+    "profondita": 385,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio"
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "Cinto Caomaggiore",
+    "punto": 301,
+    "tipo": "falda confinata",
+    "profondita": 37,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "Cona",
+    "punto": 1005,
+    "tipo": "falda libera",
+    "profondita": 6,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio"
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "Concordia Sagittaria",
+    "punto": 1021,
+    "tipo": "falda libera",
+    "profondita": 7.5,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "conduttività (a 20 °C), ione ammonio, cloruri, boro, solfati"
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "Concordia Sagittaria",
+    "punto": 308,
+    "tipo": "falda confinata",
+    "profondita": 530,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "Eraclea",
+    "punto": 1008,
+    "tipo": "falda libera",
+    "profondita": 9.98,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "conduttività (a 20 °C), ione ammonio, cloruri, arsenico, boro"
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "Eraclea",
+    "punto": 315,
+    "tipo": "falda confinata",
+    "profondita": 147,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio"
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "Gruaro",
+    "punto": 302,
+    "tipo": "falda confinata",
+    "profondita": 80,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio"
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "Jesolo",
+    "punto": 1007,
+    "tipo": "falda libera",
+    "profondita": 6,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "conduttività (a 20 °C), ione ammonio, cloruri, boro"
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "Martellago",
+    "punto": 1011,
+    "tipo": "falda libera",
+    "profondita": 15,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio, arsenico"
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "Meolo",
+    "punto": 1001,
+    "tipo": "falda libera",
+    "profondita": 6,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio, arsenico"
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "Mira",
+    "punto": 7,
+    "tipo": "falda confinata",
+    "profondita": 200,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio"
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "Mirano",
+    "punto": 288,
+    "tipo": "falda confinata",
+    "profondita": 240,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio"
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "Noale",
+    "punto": 275,
+    "tipo": "falda confinata",
+    "profondita": 299,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "Noale",
+    "punto": 277,
+    "tipo": "falda confinata",
+    "profondita": 130,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "arsenico"
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "Noventa di Piave",
+    "punto": 317,
+    "tipo": "falda confinata",
+    "profondita": 614,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio"
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "Portogruaro",
+    "punto": 1004,
+    "tipo": "falda libera",
+    "profondita": 6,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "Pramaggiore",
+    "punto": 1020,
+    "tipo": "falda libera",
+    "profondita": 9,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio"
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "Pramaggiore",
+    "punto": 306,
+    "tipo": "falda confinata",
+    "profondita": 580,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "Quarto d'Altino",
+    "punto": 15,
+    "tipo": "falda confinata",
+    "profondita": 299,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio"
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "Salzano",
+    "punto": 1010,
+    "tipo": "falda libera",
+    "profondita": 6,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "pesticidi totali, metolachlor esa"
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "San Donà di Piave",
+    "punto": 1002,
+    "tipo": "falda libera",
+    "profondita": 6,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio"
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "San Michele al Tagliamento",
+    "punto": 305,
+    "tipo": "falda confinata",
+    "profondita": 55,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "San Michele al Tagliamento",
+    "punto": 310,
+    "tipo": "falda confinata",
+    "profondita": 380,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio"
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "Santo Stino di Livenza",
+    "punto": 1003,
+    "tipo": "falda libera",
+    "profondita": 6,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio"
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "Scorzè",
+    "punto": 1012,
+    "tipo": "falda libera",
+    "profondita": 15,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio, arsenico"
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "Scorzè",
+    "punto": 280,
+    "tipo": "falda confinata",
+    "profondita": 313,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "Spinea",
+    "punto": 1009,
+    "tipo": "falda libera",
+    "profondita": 6,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio, arsenico"
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "Teglio Veneto",
+    "punto": 1019,
+    "tipo": "falda libera",
+    "profondita": 8.5,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "metolachlor esa"
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "Venezia",
+    "punto": 17,
+    "tipo": "falda confinata",
+    "profondita": 298.63,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio"
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "Venezia",
+    "punto": 25,
+    "tipo": "falda confinata",
+    "profondita": 225,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio, arsenico"
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "Venezia",
+    "punto": 299,
+    "tipo": "falda confinata",
+    "profondita": 280,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio"
+  },
+  {
+    "provincia": "Venezia",
+    "comune": "Venezia",
+    "punto": 3,
+    "tipo": "falda confinata",
+    "profondita": 199,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio"
+  },
+  {
+    "provincia": "Verona",
+    "comune": "Belfiore",
+    "punto": 387,
+    "tipo": "falda confinata",
+    "profondita": 65,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Verona",
+    "comune": "Brentino Belluno",
+    "punto": 2301302,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Verona",
+    "comune": "Brentino Belluno",
+    "punto": 2301306,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Verona",
+    "comune": "Bussolengo",
+    "punto": 676,
+    "tipo": "falda libera",
+    "profondita": 79.6,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Verona",
+    "comune": "Buttapietra",
+    "punto": 682,
+    "tipo": "falda confinata",
+    "profondita": 78,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "triclorometano"
+  },
+  {
+    "provincia": "Verona",
+    "comune": "Castelnuovo del Garda",
+    "punto": 192,
+    "tipo": "falda libera",
+    "profondita": 80,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Verona",
+    "comune": "Cazzano di Tramigna",
+    "punto": 2302402,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Verona",
+    "comune": "Cologna Veneta",
+    "punto": 392,
+    "tipo": "falda confinata",
+    "profondita": 63,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Verona",
+    "comune": "Illasi",
+    "punto": 386,
+    "tipo": "falda libera",
+    "profondita": 98.2,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Verona",
+    "comune": "Isola della Scala",
+    "punto": 187,
+    "tipo": "falda confinata",
+    "profondita": 110,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Verona",
+    "comune": "Isola della Scala",
+    "punto": 624,
+    "tipo": "falda libera",
+    "profondita": 5,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "pesticidi totali, triclorometano, tebufenozide, tetraconazole, imidacloprid"
+  },
+  {
+    "provincia": "Verona",
+    "comune": "Lavagno",
+    "punto": 683,
+    "tipo": "falda libera",
+    "profondita": 120,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Verona",
+    "comune": "Malcesine",
+    "punto": 2304501,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Verona",
+    "comune": "Montecchia di Crosara",
+    "punto": 196,
+    "tipo": "falda libera",
+    "profondita": 18,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "triclorometano"
+  },
+  {
+    "provincia": "Verona",
+    "comune": "Mozzecane",
+    "punto": 681,
+    "tipo": "falda confinata",
+    "profondita": 70.5,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "atrazina-desetil-desisopropil (DACT)"
+  },
+  {
+    "provincia": "Verona",
+    "comune": "Pescantina",
+    "punto": 677,
+    "tipo": "falda libera",
+    "profondita": 74.6,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Verona",
+    "comune": "Roverè Veronese",
+    "punto": 2306707,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Verona",
+    "comune": "San Giovanni Lupatoto",
+    "punto": 656,
+    "tipo": "falda libera",
+    "profondita": 9,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Verona",
+    "comune": "Sona",
+    "punto": 678,
+    "tipo": "falda libera",
+    "profondita": 110,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Verona",
+    "comune": "Verona",
+    "punto": 671,
+    "tipo": "falda libera",
+    "profondita": 11.82,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "glifosate"
+  },
+  {
+    "provincia": "Verona",
+    "comune": "Verona",
+    "punto": 674,
+    "tipo": "falda libera",
+    "profondita": 35,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Verona",
+    "comune": "Villafranca di Verona",
+    "punto": 679,
+    "tipo": "falda libera",
+    "profondita": 87.77,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Verona",
+    "comune": "Villafranca di Verona",
+    "punto": 680,
+    "tipo": "falda libera",
+    "profondita": 50,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "PFOS isomero lineare"
+  },
+  {
+    "provincia": "Verona",
+    "comune": "Zevio",
+    "punto": 381,
+    "tipo": "falda confinata",
+    "profondita": 100,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Verona",
+    "comune": "Zevio",
+    "punto": 653,
+    "tipo": "falda confinata",
+    "profondita": 90,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "tebufenozide, tetraconazole"
+  },
+  {
+    "provincia": "Verona",
+    "comune": "Zevio",
+    "punto": 654,
+    "tipo": "falda confinata",
+    "profondita": 50,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "triclorometano"
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Arcugnano",
+    "punto": 2400604,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Arzignano",
+    "punto": 266,
+    "tipo": "falda confinata",
+    "profondita": 91.5,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Asiago",
+    "punto": 2400922,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Bassano del Grappa",
+    "punto": 244,
+    "tipo": "falda libera",
+    "profondita": 42.1,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Bassano del Grappa",
+    "punto": 519,
+    "tipo": "falda libera",
+    "profondita": 80.5,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Bassano del Grappa",
+    "punto": 521,
+    "tipo": "falda libera",
+    "profondita": 70.3,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Bassano del Grappa",
+    "punto": 95,
+    "tipo": "falda libera",
+    "profondita": 62.26,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Breganze",
+    "punto": 458,
+    "tipo": "falda libera",
+    "profondita": 25,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Breganze",
+    "punto": "AATO31",
+    "tipo": "falda libera",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Brendola",
+    "punto": 265,
+    "tipo": "falda confinata",
+    "profondita": 42,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Caldogno",
+    "punto": 234,
+    "tipo": "falda libera",
+    "profondita": 5.87,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Caldogno",
+    "punto": "AATO49",
+    "tipo": "falda confinata",
+    "profondita": 35,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Cartigliano",
+    "punto": 501,
+    "tipo": "falda libera",
+    "profondita": 70,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Castelgomberto",
+    "punto": 468,
+    "tipo": "falda libera",
+    "profondita": 36,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "cromo VI"
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Colceresa",
+    "punto": 2405903,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Colceresa",
+    "punto": 451,
+    "tipo": "falda libera",
+    "profondita": 60,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "triclorometano"
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Dueville",
+    "punto": "AATO45",
+    "tipo": "falda confinata",
+    "profondita": 65,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Lastebasse",
+    "punto": 2405004,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Lonigo",
+    "punto": 153,
+    "tipo": "falda libera",
+    "profondita": 4,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "PFOA isomero lineare"
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Malo",
+    "punto": 460,
+    "tipo": "falda libera",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "triclorometano"
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Malo",
+    "punto": "AATO58",
+    "tipo": "falda libera",
+    "profondita": 70,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Marano Vicentino",
+    "punto": 456,
+    "tipo": "falda libera",
+    "profondita": 95,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "triclorometano"
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Marostica",
+    "punto": 450,
+    "tipo": "falda libera",
+    "profondita": 74,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "pesticidi totali, atrazina-desetil-desisopropil (DACT)"
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Marostica",
+    "punto": 452,
+    "tipo": "falda libera",
+    "profondita": 40,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Montebello Vicentino",
+    "punto": 464,
+    "tipo": "falda confinata",
+    "profondita": 100,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Montecchio Precalcino",
+    "punto": 462,
+    "tipo": "falda libera",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Monticello Conte Otto",
+    "punto": "AATO40",
+    "tipo": "falda libera",
+    "profondita": 30,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Pedemonte",
+    "punto": 2407603,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Posina",
+    "punto": 2408002,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Pozzoleone",
+    "punto": 227,
+    "tipo": "falda libera",
+    "profondita": 6.3,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Pozzoleone",
+    "punto": 463,
+    "tipo": "falda libera",
+    "profondita": 9.8,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Rossano Veneto",
+    "punto": 224,
+    "tipo": "falda libera",
+    "profondita": 78.2,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Rossano Veneto",
+    "punto": 509,
+    "tipo": "falda libera",
+    "profondita": 72.2,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Rossano Veneto",
+    "punto": 529,
+    "tipo": "falda libera",
+    "profondita": 22,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "metolachlor esa"
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Rossano Veneto",
+    "punto": 530,
+    "tipo": "falda libera",
+    "profondita": 82.7,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Rosà",
+    "punto": 506,
+    "tipo": "falda libera",
+    "profondita": 73,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Rosà",
+    "punto": 523,
+    "tipo": "falda libera",
+    "profondita": 84,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Rosà",
+    "punto": 524,
+    "tipo": "falda libera",
+    "profondita": 60,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Rosà",
+    "punto": 525,
+    "tipo": "falda libera",
+    "profondita": 44,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "San Vito di Leguzzano",
+    "punto": 2409601,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Sandrigo",
+    "punto": "AATO17",
+    "tipo": "falda libera",
+    "profondita": 12,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Sarcedo",
+    "punto": 457,
+    "tipo": "falda libera",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Schio",
+    "punto": "AATO19",
+    "tipo": "falda libera",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Solagna",
+    "punto": 2410102,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Tezze sul Brenta",
+    "punto": 235,
+    "tipo": "falda libera",
+    "profondita": 78,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Tezze sul Brenta",
+    "punto": 502,
+    "tipo": "falda libera",
+    "profondita": 80,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Tezze sul Brenta",
+    "punto": 504,
+    "tipo": "falda libera",
+    "profondita": 70,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Tezze sul Brenta",
+    "punto": 593,
+    "tipo": "falda libera",
+    "profondita": 30,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Thiene",
+    "punto": 160,
+    "tipo": "falda libera",
+    "profondita": 112.5,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "triclorometano"
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Thiene",
+    "punto": 459,
+    "tipo": "falda libera",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Torri di Quartesolo",
+    "punto": 155,
+    "tipo": "falda libera",
+    "profondita": 4.7,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Valbrenta",
+    "punto": 2403101,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Valbrenta",
+    "punto": 2411403,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Valdagno",
+    "punto": 2411112,
+    "tipo": "sorgente",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Vicenza",
+    "punto": 3046,
+    "tipo": "risorgiva",
+    "profondita": 0,
+    "anno": 2023,
+    "qualita": "scadente",
+    "parametri": "ione ammonio, PFOA isomero lineare, PFOS isomero lineare"
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Villaverla",
+    "punto": "AATO14",
+    "tipo": "falda libera",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Villaverla",
+    "punto": "AATO36",
+    "tipo": "falda libera",
+    "profondita": 40,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Villaverla",
+    "punto": "AATO64",
+    "tipo": "falda libera",
+    "profondita": "",
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  },
+  {
+    "provincia": "Vicenza",
+    "comune": "Zermeghedo",
+    "punto": 465,
+    "tipo": "falda confinata",
+    "profondita": 100,
+    "anno": 2023,
+    "qualita": "buona",
+    "parametri": ""
+  }
+]
