@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dati Visualizzati</title>
+    <style>
+        /* Imposta il colore di sfondo celeste per il body */
+        body {
+            background-color: #e0f7fa;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 24px;
+            color: #0277bd;
+        }
+
+        /* Style della tabella */
+        table {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            border: 1px solid #0277bd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #0288d1;
+            color: white;
+        }
+
+        td {
+            background-color: #f1f1f1;
+        }
+
+        tr:nth-child(even) td {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover td {
+            background-color: #e1f5fe;
+        }
+
+        .selected {
+            background-color: #d3d3d3;
+        }
+
+        /* Pulsanti */
+        input[type="button"] {
+            background-color: #0288d1;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;  /* Occupa tutta la larghezza */
+        }
+
+        input[type="button"]:hover {
+            background-color: #0277bd;
+        }
+
+        /* Contenitore dei pulsanti */
+        .button-container {
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        /* Media query per schermi più piccoli */
+        @media (max-width: 768px) {
+            table {
+                width: 100%;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            input[type="button"] {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Dati salvati</h2>
+
+    <table id="tabellaDati">
+        <thead>
+            <tr>
+                <th>Chiave</th>
+                <th>Valore</th>
+                <th>Seleziona</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Qui verranno inseriti i dati -->
+        </tbody>
+    </table>
+
+    <!-- Contenitore dei pulsanti -->
+    <div class="button-container">
+        <!-- Pulsante per modificare un record -->
+        <input type="button" id="modificaDati" value="Aggiorna Dati">
+        
+        <!-- Pulsante per cancellare un record -->
+        <input type="button" id="cancellaDati" name="opzione" value="Cancella">
+
+        <!-- Pulsante per scaricare i dati come file JSON -->
+        <input type="button" id="scaricaJson" value="Scarica Dati in JSON">
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        window.onload = function() {
+            // Recupera i dati salvati nel localStorage
+            let dati = JSON.parse(localStorage.getItem('serviziData')) || {};
+
+            // Se ci sono dati, popola la tabella
+            if (Object.keys(dati).length > 0) {
+                let tabella = document.getElementById('tabellaDati').getElementsByTagName('tbody')[0];
+
+                // Ottieni tutte le chiavi e i valori
+                let keys = Object.keys(dati);
+                let values = Object.values(dati);
+
+                // Aggiungi le righe nella tabella usando keys e values
+                for (let i = 0; i < keys.length; i++) {
+                    let row = tabella.insertRow();  // Crea una nuova riga
+                    row.insertCell(0).innerText = keys[i];  // Aggiungi la chiave nella prima cella
+                    row.insertCell(1).innerText = values[i];  // Aggiungi il valore nella seconda cella
+
+                    // Crea una cella con il radio button
+                    let radioCell = row.insertCell(2);
+                    let radioButton = document.createElement('input');
+                    radioButton.type = 'radio';
+                    radioButton.name = 'record';  // Gruppo radio per selezionare solo un record alla volta
+                    radioButton.value = i;  // Usa l'indice per identificare il record
+                    radioCell.appendChild(radioButton);
+                }
+            }
+
+            // Aggiungi il listener per il pulsante di cancellazione
+            document.getElementById('cancellaDati').addEventListener('click', function() {
+                // Trova il radio button selezionato
+                let selectedRadio = document.querySelector('input[name="record"]:checked');
+
+                if (selectedRadio) {
+                    // Ottieni l'indice del record selezionato
+                    let index = selectedRadio.value;
+                    let dati = JSON.parse(localStorage.getItem('serviziData')) || {};
+
+                    // Elimina il record selezionato
+                    delete dati[Object.keys(dati)[index]];
+
+                    // Salva i dati aggiornati nel localStorage
+                    localStorage.setItem('serviziData', JSON.stringify(dati));
+
+                    // Rimuovi la riga dalla tabella
+                    let tabella = document.getElementById('tabellaDati').getElementsByTagName('tbody')[0];
+                    tabella.deleteRow(selectedRadio.closest('tr').rowIndex - 1);
+                }
+            });
+
+            // Aggiungi il listener per il pulsante di modifica (invio dati a update.html)
+            document.getElementById('modificaDati').addEventListener('click', function() {
+                // Trova il radio button selezionato
+                let selectedRadio = document.querySelector('input[name="record"]:checked');
+
+                if (selectedRadio) {
+                    // Ottieni l'indice del record selezionato
+                    let index = selectedRadio.value;
+                    let dati = JSON.parse(localStorage.getItem('serviziData')) || {};
+                    let chiaveSelezionata = Object.keys(dati)[index];
+                    let valoreSelezionato = dati[chiaveSelezionata];
+
+                    // Invia i dati alla pagina update.html tramite AJAX
+                    $.ajax({
+                        url: 'update.html',  // Destinazione della pagina update.html
+                        type: 'POST',
+                        data: { chiave: chiaveSelezionata, valore: valoreSelezionato },
+                        success: function(response) {
+                            console.log("Dati inviati a update.html");
+                        },
+                        error: function(xhr, status, error) {
+                            console.error("Errore nell'invio a update.html:", error);
+                        }
+                    });
+
+                    // Reindirizza a update.html
+                    window.location.href = 'update.html?chiave=' + chiaveSelezionata;
+                } else {
+                    alert("Seleziona un record per modificarlo.");
+                }
+            });
+
+            // Aggiungi il listener per il pulsante di download JSON
+            document.getElementById('scaricaJson').addEventListener('click', function() {
+                // Recupera i dati dal localStorage
+                let dati = JSON.parse(localStorage.getItem('serviziData')) || {};
+
+                if (Object.keys(dati).length > 0) {
+                    // Crea un file Blob con i dati in formato JSON
+                    let blob = new Blob([JSON.stringify(dati, null, 2)], { type: 'application/json' });
+
+                    // Crea un link per il download
+                    let link = document.createElement('a');
+                    link.href = URL.createObjectURL(blob);
+                    link.download = 'dati_servizi.json';  // Nome del file da scaricare
+
+                    // Simula il click sul link per avviare il download
+                    link.click();
+                } else {
+                    alert("Non ci sono dati da scaricare.");
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

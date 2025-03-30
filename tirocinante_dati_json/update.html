@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifica Dati</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* Imposta il colore di sfondo celeste per il body */
+        body {
+            background-color: #e0f7fa;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 24px;
+            color: #0277bd;
+        }
+
+        /* Contenitore per il modulo */
+        .form-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Stile dei campi di input */
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #0288d1;
+            border-radius: 5px;
+            background-color: #f1f1f1;
+            font-size: 16px;
+        }
+
+        input[type="text"]:focus {
+            border-color: #0277bd;
+            background-color: #ffffff;
+        }
+
+        /* Pulsante di salvataggio */
+        button {
+            background-color: #0288d1;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #0277bd;
+        }
+
+        /* Media query per schermi più piccoli */
+        @media (max-width: 768px) {
+            .form-container {
+                width: 90%;
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            input[type="text"] {
+                font-size: 14px;
+            }
+
+            button {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Modifica Dati</h2>
+
+    <div class="form-container">
+        <form id="modificaForm">
+            <!-- I campi di input saranno aggiunti dinamicamente qui -->
+        </form>
+        <button type="button" id="salvaModifiche">Salva Modifiche</button>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // Recupera i dati dal localStorage
+            let dati = JSON.parse(localStorage.getItem('serviziData')) || {};
+
+            if (dati) {
+                // Aggiungi dinamicamente i campi di input per tutte le chiavi e valori
+                let form = $('#modificaForm');
+                for (const chiave in dati) {
+                    // Aggiungi un campo di input per ogni chiave e valore
+                    form.append(`
+                        <label for="${chiave}">Chiave: ${chiave}</label>
+                        <input type="text" id="${chiave}" name="${chiave}" value="${dati[chiave]}" /><br>
+                    `);
+                }
+            }
+
+            // Aggiungi il listener per il salvataggio delle modifiche
+            $('#salvaModifiche').on('click', function() {
+                // Recupera tutti i dati dal form
+                let nuoviDati = {};
+                $('#modificaForm input').each(function() {
+                    let chiave = $(this).attr('name');
+                    let valore = $(this).val();
+                    nuoviDati[chiave] = valore;  // Salva i nuovi valori
+                });
+
+                // Salva i nuovi dati nel localStorage
+                localStorage.setItem('serviziData', JSON.stringify(nuoviDati));
+                alert('Dati modificati con successo!');
+                window.location.href = 'dati.html';  // Torna alla pagina dei dati
+            });
+        });
+    </script>
+
+</body>
+</html>
