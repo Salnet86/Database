@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caricamento e Salvataggio File in JSON</title>
+</head>
+<body>
+
+  <h2>Carica un file</h2>
+  <input type="file" id="fileInput" multiple>
+  <button onclick="salvaFile()">Salva File</button>
+
+  <h3>File Caricati</h3>
+  <table border="1" id="fileTable">
+    <thead>
+      <tr>
+        <th>Nome File</th>
+        <th>Dimensione (Bytes)</th>
+        <th>Scarica</th>
+        <th>Cancella</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+
+  <script>
+    // Funzione per salvare i file in JSON
+    function salvaFile() {
+      const fileInput = document.getElementById('fileInput');
+      const files = fileInput.files;
+      let fileData = [];
+
+      // Aggiungi i file all'array
+      for (let i = 0; i < files.length; i++) {
+        let file = files[i];
+        fileData.push({
+          name: file.name,
+          size: file.size,
+          content: URL.createObjectURL(file) // Crea un URL temporaneo per il file
+        });
+      }
+
+      // Salva i dati dei file in localStorage
+      localStorage.setItem('fileData', JSON.stringify(fileData));
+      
+      // Mostra i file nella tabella
+      mostraFileInTabella();
+    }
+
+    // Funzione per visualizzare i file nella tabella
+    function mostraFileInTabella() {
+      const tableBody = document.querySelector('#fileTable tbody');
+      tableBody.innerHTML = ''; // Pulisci la tabella prima di aggiungere nuovi file
+
+      // Recupera i dati dei file da localStorage
+      const fileList = JSON.parse(localStorage.getItem('fileData')) || [];
+
+      fileList.forEach((file, index) => {
+        const row = document.createElement('tr');
+
+        // Nome del file
+        const nomeCell = document.createElement('td');
+        nomeCell.textContent = file.name;
+        row.appendChild(nomeCell);
+
+        // Dimensione del file
+        const sizeCell = document.createElement('td');
+        sizeCell.textContent = file.size;
+        row.appendChild(sizeCell);
+
+        // Bottone per scaricare il file
+        const downloadCell = document.createElement('td');
+        const downloadLink = document.createElement('a');
+        downloadLink.href = file.content;
+        downloadLink.download = file.name;
+        downloadLink.textContent = 'Scarica';
+        downloadCell.appendChild(downloadLink);
+        row.appendChild(downloadCell);
+
+        // Radio button per cancellare il file
+        const deleteCell = document.createElement('td');
+        const radioButton = document.createElement('input');
+        radioButton.type = 'radio';
+        radioButton.name = 'deleteFile';
+        radioButton.value = index; // Usa l'indice per identificare il file
+        radioButton.addEventListener('change', deleteFile);
+        deleteCell.appendChild(radioButton);
+        row.appendChild(deleteCell);
+
+        tableBody.appendChild(row);
+      });
+    }
+
+    // Funzione per cancellare il file selezionato
+    function deleteFile(event) {
+      const fileList = JSON.parse(localStorage.getItem('fileData')) || [];
+      const fileIndex = event.target.value;
+
+      // Rimuovi il file selezionato dall'array
+      fileList.splice(fileIndex, 1);
+
+      // Salva l'array aggiornato in localStorage
+      localStorage.setItem('fileData', JSON.stringify(fileList));
+
+      // Ricarica la tabella
+      mostraFileInTabella();
+    }
+
+    // Mostra i file caricati al caricamento della pagina
+    document.addEventListener('DOMContentLoaded', mostraFileInTabella);
+  </script>
+
+</body>
+</html>

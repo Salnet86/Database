@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converti PDF in JSON</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        table { width: 80%; margin: 20px auto; border-collapse: collapse; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f4f4f9; }
+    </style>
+</head>
+<body>
+    <h1>Carica un PDF e Converti in JSON</h1>
+    <input type="file" id="fileInput" accept="application/pdf">
+    <table id="dataTable" style="display:none;">
+        <thead>
+            <tr><th>Testo Estratto</th></tr>
+        </thead>
+        <tbody id="dataTableBody"></tbody>
+    </table>
+    <button id="downloadBtn" style="display:none;" onclick="downloadJSON()">Scarica JSON</button>
+    
+    <script>
+        document.getElementById('fileInput').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (!file || file.type !== "application/pdf") {
+                alert("Seleziona un file PDF valido.");
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function() {
+                const typedArray = new Uint8Array(reader.result);
+                pdfjsLib.getDocument(typedArray).promise.then(pdf => {
+                    let extractedText = [];
+                    let pagePromises = [];
+                    for (let i = 1; i <= pdf.numPages; i++) {
+                        pagePromises.push(
+                            pdf.getPage(i).then(page => {
+                                return page.getTextContent().then(textContent => {
+                                    let text = textContent.items.map(item => item.str).join(' ');
+                                    extractedText.push({ testo: text });
+                                });
+                            })
+                        );
+                    }
+                    Promise.all(pagePromises).then(() => {
+                        displayData(extractedText);
+                    });
+                });
+            };
+            reader.readAsArrayBuffer(file);
+        });
+
+        function displayData(data) {
+            const tableBody = document.getElementById('dataTableBody');
+            tableBody.innerHTML = '';
+            data.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `<td>${item.testo}</td>`;
+                tableBody.appendChild(row);
+            });
+            document.getElementById('dataTable').style.display = 'table';
+            document.getElementById('downloadBtn').style.display = 'block';
+        }
+
+        function downloadJSON() {
+            const tableRows = document.querySelectorAll('#dataTableBody tr');
+            let jsonData = [];
+            tableRows.forEach(row => {
+                jsonData.push({ testo: row.cells[0].textContent });
+            });
+            const blob = new Blob([JSON.stringify(jsonData, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'estratto.json';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
