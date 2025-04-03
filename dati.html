@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserisci Dati Vegetali</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: lime; /* Colore di sfondo lime */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        height: 100vh;
+        color: #333;
+        padding: 20px;
+    }
+
+    h2 {
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    /* Ridurre la larghezza del contenitore principale */
+    div {
+        width: 100%;
+        max-width: 600px;  /* Imposta un massimo di 600px per il contenitore */
+        margin: 0 auto;
+       
+    }
+
+   
+
+    label {
+        display: block;
+        margin: 10px 0 5px;
+    }
+
+    
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 8px;
+        border: none;
+        border-radius: 4px;
+        font-size: 1em;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    h3 {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+    }
+
+    table, th, td {
+        border: 1px solid #ddd;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+    }
+
+   
+
+    .actions button {
+        width: auto;
+        padding: 10px 20px;
+    }
+
+   
+
+    }
+</style>
+
+</head>
+<body>
+
+    <div>
+        <h2>Tecniche di automatizzazione e manipolazione dati strutturati</h2>
+        
+        <form id="formDati">
+            <label for="cod_id">Codice ID:</label>
+            <input type="text" id="cod_id" name="cod_id">
+
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome">
+
+            <label for="cognome">Cognome:</label>
+            <input type="text" id="cognome" name="cognome">
+
+            <label for="eta">Età:</label>
+            <input type="number" id="eta" name="eta">
+
+            <label for="mansione">Mansione:</label>
+            <input type="text" id="mansione" name="mansione">
+
+            <label for="tipo_vegetale">Tipo Vegetale:</label>
+            <input type="text" id="tipo_vegetale" name="tipo_vegetale">
+
+            <label for="tipo_materiale">Tipo Materiale:</label>
+            <input type="text" id="tipo_materiale" name="tipo_materiale">
+
+            <button type="button" onclick="dati()">Invia Dati</button>
+        </form>
+
+        <h3>Dati Inseriti:</h3>
+        <pre id="output"></pre>
+
+        <h3>Tabella Dati:</h3>
+        <div id="tabella"></div>
+
+        <div class="actions">
+            <button type="button" onclick="eliminaRecord()">Elimina Record Selezionato</button>
+        </div>
+    </div>
+
+    <script>
+        var arr = []; // Array per memorizzare gli oggetti
+        var count = 0;
+
+        // Carica i dati da localStorage se ci sono
+        function caricaDati() {
+            if (localStorage.getItem("arr")) {
+                arr = JSON.parse(localStorage.getItem("arr"));
+                count = arr.length;
+                aggiornaTabella();
+            }
+        }
+
+        // Funzione che viene chiamata quando si clicca sul pulsante per inserire i dati
+        function dati() {
+            var data = new Date(); // Crea un nuovo oggetto Data
+
+            // Ottieni i valori dai campi di input
+            var cod_id = document.getElementById("cod_id").value;
+            var nome = document.getElementById("nome").value;
+            var cognome = document.getElementById("cognome").value;
+            var eta = document.getElementById("eta").value;
+            var mansione = document.getElementById("mansione").value;
+            var tipo_vegetale = document.getElementById("tipo_vegetale").value;
+            var tipo_materiale = document.getElementById("tipo_materiale").value;
+
+            // Crea l'oggetto con i dati inseriti
+            var biologia_VEGETALI = {
+                cod_id: cod_id,
+                nome: nome,
+                cognome: cognome,
+                eta: eta,
+                mansione: mansione,
+                tipo_vegetale: tipo_vegetale,
+                tipo_materiale: tipo_materiale,
+                data: data.getFullYear() + "/" + (data.getMonth() + 1) + "/" + data.getDate() // Aggiungiamo la data direttamente qui
+            };
+
+            // Aggiungi l'oggetto all'array
+            arr.push(biologia_VEGETALI); // Usa push per aggiungere un nuovo elemento
+            count++;
+
+            // Salva l'array in localStorage
+            localStorage.setItem("arr", JSON.stringify(arr));
+
+            // Mostra i dati inseriti nella pagina
+            document.getElementById("output").textContent = JSON.stringify(arr, null, 2);
+
+            // Stampa anche in console per debug
+            console.log(JSON.stringify(arr));
+
+            // Aggiorna la tabella
+            aggiornaTabella();
+        }
+
+        // Funzione per aggiornare la tabella
+        function aggiornaTabella() {
+            var html = "<table>";
+            html += "<tr><th>Seleziona</th><th>Codice ID</th><th>Nome</th><th>Cognome</th><th>Età</th><th>Mansione</th><th>Tipo Vegetale</th><th>Tipo Materiale</th><th>Data</th></tr>";
+
+            // Crea le righe della tabella per ogni elemento nell'array
+            for (var i = 0; i < arr.length; i++) {
+                html += "<tr>";
+                html += "<td><input type='radio' name='record' value='" + i + "'></td>";
+                html += "<td>" + arr[i].cod_id + "</td>";
+                html += "<td>" + arr[i].nome + "</td>";
+                html += "<td>" + arr[i].cognome + "</td>";
+                html += "<td>" + arr[i].eta + "</td>";
+                html += "<td>" + arr[i].mansione + "</td>";
+                html += "<td>" + arr[i].tipo_vegetale + "</td>";
+                html += "<td>" + arr[i].tipo_materiale + "</td>";
+                html += "<td>" + arr[i].data + "</td>";
+                html += "</tr>";
+            }
+
+            html += "</table>";
+            document.getElementById("tabella").innerHTML = html;
+        }
+
+        // Funzione per eliminare il record selezionato
+        function eliminaRecord() {
+            var selectedIndex = -1;
+            var radios = document.getElementsByName('record');
+
+            // Trova quale radio button è selezionato
+            for (var i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    selectedIndex = i;
+                    break;
+                }
+            }
+
+            // Se un record è stato selezionato
+            if (selectedIndex >= 0) {
+                // Rimuovi il record dall'array
+                arr.splice(selectedIndex, 1);
+
+                // Salva di nuovo l'array aggiornato in localStorage
+                localStorage.setItem("arr", JSON.stringify(arr));
+
+                // Aggiorna la tabella
+                aggiornaTabella();
+
+            } else {
+                alert("Seleziona un record da eliminare.");
+            }
+        }
+
+        // Carica i dati all'avvio
+        caricaDati();
+    </script>
+
+</body>
+</html>
