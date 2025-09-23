@@ -1,0 +1,111 @@
+# 1. Fermare il servizio MySQL e tutti i processi mysqld attivi
+sudo systemctl stop mysql
+sudo killall mysqld
+
+# Controllare che nessun processo mysqld sia rimasto attivo
+ps aux | grep mysqld
+
+# 2. Avviare MySQL senza controllo permessi per poter resettare la password root
+sudo mysqld_safe --skip-grant-tables &
+
+# 3. Aprire un nuovo terminale o prompt, e connettersi a MySQL senza password
+mysql -u root
+
+# 4. Una volta dentro MySQL, aggiornare la password dell'utente root
+FLUSH PRIVILEGES;
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'NuovaPasswordSicura123!';
+FLUSH PRIVILEGES;
+
+# 5. Uscire da MySQL
+EXIT;
+
+# 6. Tornare al terminale principale, uccidere mysqld in esecuzione con --skip-grant-tables
+sudo killall mysqld
+
+# 7. Avviare il servizio MySQL normalmente
+sudo systemctl start mysql
+
+# 8. Verificare lo stato del servizio MySQL
+sudo systemctl status mysql
+
+# 9. Connettersi con la nuova password per verificare che tutto funzioni
+mysql -u root -p
+# Inserire la nuova password impostata
+
+# Nota su errori comuni:
+# Se MySQL non parte e nel log trovi "Unable to lock ./ibdata1 error: 11" significa che c’è un altro processo mysqld che blocca i file dati.
+# In tal caso fermare o killare i processi mysqld rimasti.
+
+
+
+
+
+✅ I COMANDI ESEGUITI
+🔹 1. sudo service mysql stop
+
+Cosa fa: Ferma il servizio MySQL in modo sicuro.
+Motivo possibile: volevi modificarne la configurazione o l'utente, quindi era necessario fermarlo prima.
+
+🔹 2. sudo usermod -d /var/lib/mysql/ mysql
+
+Cosa fa: Cambia la home directory dell’utente di sistema mysql in /var/lib/mysql/.
+Nota: mysql è l’utente che esegue il servizio MySQL. /var/lib/mysql/ è la cartella dei dati del database.
+
+⚠️ Attenzione: Questo comando non sposta i file, modifica solo il riferimento alla home directory. Se la home era già impostata correttamente, questo comando è inutile o potenzialmente rischioso se usato male.
+
+🔹 3. sudo service mysql star
+
+❌ Errore di battitura!
+Il comando è sbagliato. Hai scritto star invece di start.
+
+✔️ Corretto:
+
+sudo service mysql start
+
+
+Cosa fa: Riavvia il servizio MySQL dopo la modifica.
+
+🔹 4. sudo service mysql status
+
+Cosa fa: Controlla lo stato del servizio MySQL.
+
+✅ Ti ha detto che MySQL è attivo, funzionante, e pronto a ricevere connessioni.
+
+⚠️ COSA POTEVA NON ANDARE
+
+Errore di battitura (star)
+❌ Il comando sudo service mysql star non funziona.
+Avresti dovuto ricevere un messaggio tipo:
+
+mysql: unrecognized service action 'star'
+
+
+➤ Soluzione: ripeti il comando con start.
+
+Modifica home dell’utente MySQL
+Se il demone MySQL non trova i file nella home, potrebbe non avviarsi più, specialmente se i permessi non sono corretti.
+
+✔️ Ma in questo caso non è successo, perché:
+
+/var/lib/mysql è effettivamente la cartella dati corretta.
+
+I permessi probabilmente erano già a posto (proprietario mysql:mysql).
+
+✅ IN SINTESI
+Comando	Esito	Note
+sudo service mysql stop	✅ OK	Ha fermato correttamente MySQL.
+sudo usermod -d /var/lib/mysql/ mysql	✅ OK	Ha cambiato (o confermato) la home dell’utente mysql.
+sudo service mysql star	❌ Errore	Hai scritto star invece di start.
+sudo service mysql start	✅ OK (dopo)	Ha riavviato MySQL.
+sudo service mysql status	✅ OK	Conferma che MySQL è attivo e funzionante.
+💡 Consiglio finale
+
+Se vuoi assicurarti che i permessi siano corretti sulla cartella dei dati (opzionale, ma sicuro):
+
+sudo chown -R mysql:mysql /var/lib/mysql/
+
+
+E poi puoi riavviare MySQL con:
+
+sudo service mysql restart
+

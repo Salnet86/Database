@@ -1,0 +1,86 @@
+# --- Diventa root ---
+sudo -i
+
+# --- Crea la directory mancante per il socket di MySQL ---
+mkdir -p /var/run/mysqld
+chown mysql:mysql /var/run/mysqld
+
+# --- Avvia MySQL normalmente ---
+systemctl start mysql
+
+# --- Prova ad accedere a MySQL (ti chiederà la password) ---
+mysql -u root -p
+
+# --- Se errore Access denied, prova a fermare MySQL e avviare in modalità senza grant tables ---
+systemctl stop mysql
+
+# Controlla processi mysqld (deve restare solo grep)
+ps aux | grep mysqld
+
+# Se processo mysqld resta attivo, uccidilo forzatamente
+killall mysqld
+
+# Controlla di nuovo processi mysqld
+ps aux | grep mysqld
+
+# Ricrea la directory del socket (perché /var/run si svuota al riavvio/arresto)
+mkdir -p /var/run/mysqld
+chown mysql:mysql /var/run/mysqld
+
+# Avvia MySQL in modalità recupero (senza grant tables)
+mysqld_safe --skip-grant-tables &
+
+# Apri un nuovo terminale o usa Ctrl+Z e bg per mettere in background il comando precedente
+
+# Accedi a MySQL senza password
+mysql -u root
+
+# Dentro MySQL, per MySQL 8.0 usa questo per resettare la password
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'NuovaPasswordSicura';
+FLUSH PRIVILEGES;
+EXIT;
+
+# Riavvia MySQL normalmente
+systemctl restart mysql
+
+# Prova a connetterti con la nuova password
+mysql -u root -p
+
+# Se vuoi sapere la versione di MySQL
+mysql --version
+
+# Se decidi di disinstallare tutto per partire da capo:
+
+# Ferma MySQL
+systemctl stop mysql
+
+# Rimuovi MySQL, phpMyAdmin e PHP
+apt-get remove --purge mysql-server mysql-client mysql-common phpmyadmin php* -y
+
+# Pulisci pacchetti inutilizzati e cache
+apt-get autoremove -y
+apt-get autoclean
+
+# Rimuovi manualmente cartelle residue (ATTENZIONE: dati cancellati)
+rm -rf /etc/mysql /var/lib/mysql /var/log/mysql
+rm -rf /etc/phpmyadmin
+
+# Aggiorna i pacchetti
+apt update
+
+# Reinstalla MySQL, PHP e phpMyAdmin
+apt install mysql-server php php-mysql phpmyadmin -y
+
+# Avvia e abilita MySQL
+systemctl start mysql
+systemctl enable mysql
+
+# Configura sicurezza e password root
+mysql_secure_installation
+
+# Prova ad accedere
+mysql -u root -p
+
+# Se durante la rimozione di phpMyAdmin ricevi errore di connessione MySQL e ti chiede cosa fare:
+# Scegli IGNORA e prosegui con la rimozione.
+

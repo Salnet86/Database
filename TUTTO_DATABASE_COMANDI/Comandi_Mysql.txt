@@ -1,0 +1,448 @@
+/*
+  all_mysql_commands.sql
+  ----------------------
+  Raccolta ampia di comandi MySQL / amministrazione / utilità.
+
+  – Il file contiene comandi SQL (da eseguire nella shell mysql)
+  – e blocchi commentati con comandi shell (bash) per amministrazione esterna.
+  – I comandi distruttivi sono chiaramente segnalati.
+  – Non eseguire tutto insieme senza leggere.
+*/
+
+-- =========================
+-- Connessione (shell)
+-- =========================
+-- Aprire una sessione mysql (bash):
+-- mysql -u root -p
+-- mysql -u user -p -h host -P port --socket=/var/run/mysqld/mysqld.sock
+
+-- =========================
+-- Informazioni generali
+-- =========================
+-- Versione, utente, stato:
+SELECT VERSION();
+SELECT USER();
+SELECT CURRENT_USER();
+STATUS;
+
+-- Variabili e parametri:
+SHOW VARIABLES;
+SHOW VARIABLES LIKE 'socket';
+SHOW VARIABLES LIKE 'port';
+SHOW VARIABLES LIKE 'datadir';
+SHOW VARIABLES LIKE 'max_connections';
+SHOW GLOBAL VARIABLES LIKE '%innodb%';
+SET @v := (SELECT @@version);
+
+-- Stato e statistiche:
+SHOW STATUS;
+SHOW GLOBAL STATUS;
+SHOW ENGINE INNODB STATUS\G;
+
+-- Lista processi e connessioni:
+SHOW PROCESSLIST;
+SHOW FULL PROCESSLIST;
+-- Per visualizzare processi come query complete su bash:
+-- mysql -e "SHOW FULL PROCESSLIST\G"
+
+-- =========================
+-- Database: creare/eliminare/modificare
+-- =========================
+CREATE DATABASE testdb;
+CREATE DATABASE IF NOT EXISTS testdb2 CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+-- Mostrare:
+SHOW DATABASES;
+USE testdb;
+SHOW CREATE DATABASE testdb;
+DROP DATABASE IF EXISTS testdb;                 -- **distruttivo**
+
+-- =========================
+-- Tabelle (DDL): creazione/cancellazione/metadati
+-- =========================
+-- Creazione tabella (esempio)
+CREATE TABLE persone (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(100),
+  cognome VARCHAR(100),
+  nato DATETIME,
+  note TEXT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Mostra:
+SHOW TABLES;
+SHOW CREATE TABLE persone;
+DESCRIBE persone;
+EXPLAIN SELECT * FROM persone;
+
+-- Rinominare tabella
+RENAME TABLE persone TO utenti;
+-- Eliminare tabella
+DROP TABLE IF EXISTS utenti;                    -- **distruttivo**
+
+-- Copia struttura tabella
+CREATE TABLE copia LIKE original;
+-- Copia struttura + dati (attenzione a dimensioni)
+CREATE TABLE copy_with_data AS SELECT * FROM original;
+
+-- =========================
+-- Indici e vincoli
+-- =========================
+-- Aggiungi indice (esempio)
+CREATE INDEX idx_nome ON persone(nome);
+-- Eliminare indice
+DROP INDEX idx_nome ON persone;
+
+-- Chiavi esterne
+ALTER TABLE child_table
+  ADD CONSTRAINT fk_parent FOREIGN KEY (parent_id) REFERENCES parent(id);
+
+-- =========================
+-- Viste (views)
+-- =========================
+CREATE VIEW v_utenti AS SELECT id, nome, cognome FROM persone;
+SHOW FULL TABLES WHERE Table_type = 'VIEW';
+SHOW CREATE VIEW v_utenti;
+DROP VIEW IF EXISTS v_utenti;
+
+-- =========================
+-- Stored routines: procedures e functions
+-- =========================
+-- Esempio FUNCTION
+DELIMITER $$
+CREATE FUNCTION fn_sum_example(a INT, b INT) RETURNS INT
+DETERMINISTIC
+BEGIN
+  RETURN a + b;
+END $$
+DELIMITER ;
+
+SELECT fn_sum_example(1,2);
+
+-- Esempio PROCEDURE
+DELIMITER $$
+CREATE PROCEDURE sp_test()
+BEGIN
+  SELECT 'hello' AS msg;
+END $$
+DELIMITER ;
+
+CALL sp_test();
+DROP PROCEDURE IF EXISTS sp_test;
+DROP FUNCTION IF EXISTS fn_sum_example;
+
+-- PREPARE / EXECUTE
+PREPARE stmt FROM 'SELECT ? + ?';
+SET @x=1; SET @y=2;
+EXECUTE stmt USING @x, @y;
+DEALLOCATE PREPARE stmt;
+
+-- =========================
+-- Trigger
+-- =========================
+CREATE TRIGGER trg_before_insert_persone
+BEFORE INSERT ON persone
+FOR EACH ROW
+BEGIN
+  -- Esempio:
+  SET NEW.note = CONCAT('Creato il ', NOW());
+END;
+
+DROP TRIGGER IF EXISTS trg_before_insert_persone;
+
+-- =========================
+-- Event Scheduler (eventi programmati)
+-- =========================
+-- Abilita scheduler (da my.cnf o temporaneamente)
+SET GLOBAL event_scheduler = ON;
+-- Crea evento
+CREATE EVENT ev_pulisci
+ON SCHEDULE EVERY 1 DAY
+DO
+  BEGIN
+    -- esempio: operazione pianificata
+    -- DELETE FROM logs WHERE created < NOW() - INTERVAL 30 DAY;
+    SELECT 'evento eseguito' AS info;
+  END;
+-- Disabilita
+SET GLOBAL event_scheduler = OFF;
+DROP EVENT IF EXISTS ev_pulisci;
+
+-- =========================
+-- Transazioni (TCL)
+-- =========================
+START TRANSACTION;
+-- ... eseguire comandi (UPDATE/INSERT/DELETE - atten.)
+COMMIT;
+ROLLBACK;
+
+-- SAVEPOINT / RELEASE
+SAVEPOINT sp1;
+ROLLBACK TO sp1;
+RELEASE SAVEPOINT sp1;
+
+-- =========================
+-- Privilegi / Utenti / Ruoli (DCL)
+-- =========================
+-- Creare utente:
+CREATE USER 'alice'@'localhost' IDENTIFIED BY 'password';
+CREATE USER 'bob'@'%' IDENTIFIED WITH mysql_native_password BY 'secret';
+
+-- Assegnare privilegi (example)
+GRANT SELECT, INSERT, UPDATE ON testdb.* TO 'alice'@'localhost';
+GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;
+GRANT PROCESS, RELOAD, SHUTDOWN ON *.* TO 'ops'@'localhost';
+
+-- Assegnare ruoli (MySQL 8+)
+CREATE ROLE 'developer';
+GRANT SELECT, INSERT ON sample.* TO 'developer';
+GRANT 'developer' TO 'alice'@'localhost';
+SET DEFAULT ROLE 'developer' FOR 'alice'@'localhost';
+
+-- Revocare privilegi
+REVOKE SELECT ON testdb.* FROM 'alice'@'localhost';
+REVOKE ALL PRIVILEGES, GRANT OPTION FROM 'admin'@'localhost';
+
+-- Visualizzare privilegi:
+SHOW GRANTS FOR 'alice'@'localhost';
+SELECT User, Host, authentication_string, plugin FROM mysql.user;
+SELECT * FROM mysql.user LIMIT 10;
+
+-- Modificare password / autenticazione
+ALTER USER 'alice'@'localhost' IDENTIFIED BY 'newpass';
+ALTER USER 'alice'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'newpass';
+SET PASSWORD FOR 'alice'@'localhost' = 'newpass';   -- deprecated in alcune versioni
+
+-- Eliminare utente
+DROP USER IF EXISTS 'alice'@'localhost';
+
+-- FLUSH PRIVILEGES (necessario solo se si modificano manualmente tabelle grant)
+FLUSH PRIVILEGES;
+
+-- =========================
+-- Gestione ruoli e permessi avanzati
+-- =========================
+-- Mostrare privilegi globali disponibili
+SHOW PRIVILEGES;
+
+-- Impostare resource limits per utenti
+ALTER USER 'bob'@'localhost' WITH MAX_QUERIES_PER_HOUR 1000;
+ALTER USER 'bob'@'localhost' WITH MAX_UPDATES_PER_HOUR 500;
+
+-- =========================
+-- Log e diagnostica
+-- =========================
+-- Abilitare slow_query_log (via variabile)
+SET GLOBAL slow_query_log = 'ON';
+SET GLOBAL long_query_time = 2; -- secondi
+SHOW VARIABLES LIKE 'slow_query_log%';
+-- Visualizzare error log se accessibile (file di sistema):
+-- sudo tail -n 200 /var/log/mysql/error.log
+
+-- SHOW WARNINGS/ERRORS
+SHOW WARNINGS;
+SHOW ERRORS;
+
+-- KILL thread/processo
+SHOW PROCESSLIST;
+KILL 1234;                 -- termina processo con id 1234
+KILL QUERY 1234;           -- termina solo la query
+
+-- =========================
+-- Backup e ripristino (comandi shell)
+-- =========================
+-- Dump singolo DB
+-- mysqldump -u root -p nome_db > dump_nome_db.sql
+
+-- Dump di tutti i DB
+-- mysqldump -u root -p --all-databases > all_databases.sql
+
+-- Dump senza dati (solo struttura)
+-- mysqldump -u root -p --no-data nome_db > schema.sql
+
+-- Ripristino
+-- mysql -u root -p nome_db < dump.sql
+
+-- Dump con routine e triggers
+-- mysqldump -u root -p --routines --triggers nome_db > dump_full.sql
+
+-- Dump compressi
+-- mysqldump -u root -p nome_db | gzip > dump_name.sql.gz
+-- Ripristino da gzip:
+-- gunzip < dump_name.sql.gz | mysql -u root -p nome_db
+
+-- Backup binlog (per point-in-time recovery)
+-- mysqlbinlog /var/log/mysql/mysql-bin.000001 > binlog.sql
+
+-- =========================
+-- Replicazione (master/slave) — comandi essenziali
+-- =========================
+-- Su Master:
+SHOW MASTER STATUS;
+-- Output: File, Position
+-- Configurazione via my.cnf:
+-- [mysqld]
+-- server-id = 1
+-- log_bin = /var/log/mysql/mysql-bin.log
+
+-- Su Replica:
+-- CHANGE MASTER TO MASTER_HOST='master_host', MASTER_USER='repl', MASTER_PASSWORD='replpass',
+-- MASTER_LOG_FILE='mysql-bin.000001', MASTER_LOG_POS=  107;
+-- START SLAVE;
+-- STOP SLAVE;
+-- SHOW SLAVE STATUS\G
+
+-- MySQL 8 chiamato "source" / "replica" in alcune documentazioni:
+-- START REPLICA; STOP REPLICA; SHOW REPLICA STATUS\G
+
+-- =========================
+-- Plugin / Componenti / Installazione
+-- =========================
+-- Mostra plugin
+SHOW PLUGINS;
+-- Install plugin example (richiede file plugin .so e privilegi)
+-- INSTALL PLUGIN plugin_name SONAME 'plugin_library.so';
+-- UNINSTALL PLUGIN plugin_name;
+
+-- =========================
+-- Performance Schema e Information Schema
+-- =========================
+-- Viste di sistema
+SELECT * FROM information_schema.TABLES WHERE table_schema='mysql' LIMIT 10;
+SELECT * FROM performance_schema.events_statements_summary_by_digest LIMIT 10;
+
+-- Abilitare/disabilitare Performance Schema via my.cnf (riavvio richiesto)
+
+-- =========================
+-- File system e dati
+-- =========================
+-- Mostra datadir
+SHOW VARIABLES LIKE 'datadir';
+-- Esempio: cambiare datadir richiede:
+-- 1) fermare mysqld
+-- 2) copiare i file su nuova cartella
+-- 3) aggiornare my.cnf (datadir)
+-- 4) impostare owner mysql:mysql e permessi
+-- 5) avviare mysqld
+
+-- =========================
+-- Comandi amministrativi (mysqladmin)
+-- =========================
+-- Ping server:
+-- mysqladmin -u root -p ping
+
+-- Uptime e status:
+-- mysqladmin -u root -p extended-status
+
+-- Shutdown server:
+-- mysqladmin -u root -p shutdown
+
+-- Flush (esempi):
+-- mysqladmin -u root -p flush-tables
+-- mysqladmin -u root -p reload
+
+-- =========================
+-- Comandi systemd / service (Linux)
+-- =========================
+-- sudo systemctl start mysql
+-- sudo systemctl stop mysql
+-- sudo systemctl restart mysql
+-- sudo systemctl status mysql
+
+-- =========================
+-- Sicurezza: mysql_secure_installation
+-- =========================
+-- Eseguire:
+-- sudo mysql_secure_installation
+-- Serve a impostare password root, rimuovere anonimi, disabilitare root remoto, rimuovere database di test, ricaricare privilegi.
+
+-- =========================
+-- Configurazione server (my.cnf) - esempio di parametri rilevanti
+-- =========================
+/*
+  Esempio (file /etc/mysql/my.cnf o /etc/mysql/mysql.conf.d/mysqld.cnf):
+
+  [mysqld]
+  user = mysql
+  pid-file = /var/run/mysqld/mysqld.pid
+  socket = /var/run/mysqld/mysqld.sock
+  datadir = /var/lib/mysql
+  port = 3306
+  bind-address = 127.0.0.1
+  max_connections = 500
+  innodb_buffer_pool_size = 1G
+  log_error = /var/log/mysql/error.log
+  slow_query_log = 1
+  slow_query_log_file = /var/log/mysql/mysql-slow.log
+  long_query_time = 2
+*/
+
+-- Applicare alcune variabili in runtime (esempi)
+SET GLOBAL max_connections = 500;
+SET GLOBAL innodb_buffer_pool_size = 1073741824; -- bytes
+
+-- Per rendere persistenti le modifiche, modificare my.cnf e riavviare mysqld.
+
+-- =========================
+-- Reset e comandi globali
+-- =========================
+-- Resetta binlog:
+RESET MASTER;          -- **distruttivo**: elimina tutti i binlog
+RESET SLAVE ALL;       -- **distruttivo**: rimuove info replica
+
+-- Reset privileges:
+-- (attenzione: non usare a cuor leggero)
+DROP DATABASE mysql;   -- **DISTRUTTIVO**: elimina grant tables (non fare!)
+-- Se per errore si toccano le grant tables:
+-- mysql_install_db o reinstallazione o ripristino da backup
+
+-- =========================
+-- Utility varie utili (comandi SQL)
+-- =========================
+-- Show open tables
+SHOW OPEN TABLES;
+-- Show processlist in detail
+SELECT * FROM INFORMATION_SCHEMA.PROCESSLIST;
+-- Show locks
+SELECT * FROM performance_schema.data_locks;
+-- Check table
+CHECK TABLE persone;
+-- Repair table (MyISAM)
+REPAIR TABLE mytable;
+
+-- =========================
+-- Esempi di query di amministrazione complesse
+-- =========================
+-- Visualizzare tutte le tabelle con dimensione
+SELECT table_schema AS db_name,
+       table_name,
+       ROUND((data_length + index_length) / 1024 / 1024, 2) `size_mb`
+FROM information_schema.TABLES
+ORDER BY (data_length + index_length) DESC
+LIMIT 100;
+
+-- Verificare utenti con accesso remoto (host != 'localhost')
+SELECT User, Host FROM mysql.user WHERE Host <> 'localhost';
+
+-- =========================
+-- Comandi per gestire certificati TLS
+-- =========================
+-- Visualizza variabili TLS
+SHOW GLOBAL VARIABLES LIKE '%ssl%';
+-- Impostazioni TLS si gestiscono in my.cnf:
+-- [mysqld]
+-- ssl-ca=/etc/mysql/certs/ca.pem
+-- ssl-cert=/etc/mysql/certs/server-cert.pem
+-- ssl-key=/etc/mysql/certs/server-key.pem
+
+-- =========================
+-- Fine del file - Note finali
+-- =========================
+
+/*
+  NOTE IMPORTANTI:
+  - Molti comandi qui elencati richiedono privilegi adeguati (root o utenti con GRANT).
+  - Alcune istruzioni cambiano comportamento tra versioni (5.7 vs 8.0): verificare la versione.
+  - Modifiche a my.cnf richiedono riavvio per essere persistenti.
+  - Eseguire comandi distruttivi solo dopo backup.
+*/
+

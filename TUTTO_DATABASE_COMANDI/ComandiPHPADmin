@@ -1,0 +1,50 @@
+#!/bin/bash
+
+# Uscita se c'è un errore
+set -e
+
+echo "🔧 Aggiornamento pacchetti..."
+sudo apt update && sudo apt upgrade -y
+
+echo "📦 Installazione di MySQL Server..."
+sudo apt install mysql-server -y
+
+echo "✅ Abilitazione e avvio di MySQL..."
+sudo systemctl enable mysql
+sudo systemctl start mysql
+
+echo "🔐 Esecuzione di mysql_secure_installation (configura la password di root)..."
+sudo mysql_secure_installation
+
+echo "👤 Creazione utente MySQL (facoltativo)..."
+# Sostituisci USERNAME e PASSWORD se vuoi creare un nuovo utente
+# sudo mysql -e "CREATE USER 'USERNAME'@'localhost' IDENTIFIED BY 'PASSWORD';"
+# sudo mysql -e "GRANT ALL PRIVILEGES ON *.* TO 'USERNAME'@'localhost' WITH GRANT OPTION;"
+# sudo mysql -e "FLUSH PRIVILEGES;"
+
+echo "🧰 Installazione di Apache, PHP e estensioni necessarie..."
+sudo apt install apache2 php libapache2-mod-php php-mysql php-mbstring php-zip php-gd php-json php-curl -y
+
+echo "🌐 Abilitazione modulo PHP per Apache..."
+sudo a2enmod php*
+
+echo "📦 Installazione di phpMyAdmin..."
+sudo apt install phpmyadmin -y
+
+echo "🔁 Riavvio Apache..."
+sudo systemctl restart apache2
+
+echo "✅ Verifica servizi..."
+
+echo "🔍 Stato MySQL:"
+sudo systemctl status mysql | grep Active
+
+echo "🔍 Stato Apache:"
+sudo systemctl status apache2 | grep Active
+
+echo "✅ Installazione completata!"
+
+echo ""
+echo "🌐 Puoi accedere a phpMyAdmin da: http://localhost/phpmyadmin"
+echo "💡 Usa l'utente 'root' (o altro creato) per accedere a MySQL."
+
